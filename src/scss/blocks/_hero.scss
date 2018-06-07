@@ -1,0 +1,41 @@
+.s-hero {
+  background: #f9f9f9 url('../assets/img/hero-desktop.jpg') 50% no-repeat;
+}
+.hero {
+  min-height: 300px;
+  padding: 92px 30px 30px;
+  font: $ff2;
+  font-size: 24px;
+  color: #000;
+  text-align: center;
+}
+
+// mobile only start
+@media (max-width: 767px) {
+  .s-hero {
+    background: #f9f9f9 url('../assets/img/hero-mobile.jpg') 50% no-repeat;
+  }
+// mobile only end
+}
+
+// tablet start
+@media (min-width: 768px) {
+  .hero {
+    padding: 160px 90px 90px;
+    min-height: 627px;
+    font-size: 40px;
+  }
+
+  // tablet end
+}
+
+// desktop start
+@media (min-width: 1200px) {
+  .hero {
+    padding: 160px 150px 150px;
+    min-height: 627px;
+    font-size: 50px;
+  }
+
+// desktop end
+}

@@ -1,0 +1,42 @@
+.interior,
+.toys {
+  min-height: 136px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 30px;
+  &:hover {
+    margin-top: -10px;
+    min-height: 146px;
+    transition: .2s;
+  }
+}
+
+.interior {
+  background: #63d1bb;
+}
+
+.toys {
+  background: #56c3b2;
+}
+
+// tablet start
+@media (min-width: 768px) {
+  .interior,
+  .toys {
+    padding: 35px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 17px;
+      background: url('../assets/img/zigzag-fill-desktop.png') no-repeat;
+    }
+  }
+
+// tablet end
+}

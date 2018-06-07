@@ -1,0 +1,116 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+body {
+  color: #444;
+  font: $ff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  height: 52px;
+  border: 2px solid #444;
+  font: $ff2;
+  font-size: 16px;
+  line-height: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  color: #444444;
+  background-color: #fff;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  transition: background-color .1s ease;
+  cursor: pointer;
+  &:focus, &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  &:hover {
+    background-color: #444444;
+  }
+  &:active {
+    background-color: #444444;
+    color: #8d8d8d;
+  }
+  &:disabled {
+    opacity: .5;
+  }
+}
+
+.inp {
+  background-color: white;
+  border: 2px solid #444;
+  box-shadow: inset 0 -2px 0 black;
+  &:hover,
+  &:active {
+    border: 2px solid #62d1ba;
+    box-shadow: inset 0 -2px 0 black;
+  }
+}
+
+h1, h2, h3, h4, h4, h6 {
+  color: #000;
+  font: $ff2;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#object {
+  height: 0;
+  width: 0;
+  position: absolute;
+  left: 9999px;
+}
+
+//// tablet start
+//@media (min-width: 768px) {
+//  /* перебиваем стили бутстрап, что бы не было зазоров между col-md-4 */
+//  .col-md-4 {
+//    flex: 0 0 33.33334%;
+//    max-width: 33.33334%;
+//  }
+//
+//  h2, h3, h4, h4, h6 {
+//    font-size: 21px;
+//  }
+//
+//  h1 {
+//    font-size: 30px;
+//  }
+//
+//  // tablet end
+//}
