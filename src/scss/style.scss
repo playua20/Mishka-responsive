@@ -1,6 +1,7 @@
-@import 'fonts';
 @import 'variables';
+@import 'mixins';
 @import 'base';
+@import 'sprite';
 @import 'blocks/header';
 @import 'blocks/footer';
 @import 'blocks/nav';
@@ -9,5 +10,6 @@
 @import 'blocks/hamburger';
 @import 'blocks/product';
 @import 'blocks/form';
+@import 'blocks/galpop-close';
 
-@import '../assets/img/css/sprite.css';
+@import '../img/css/sprite.css';

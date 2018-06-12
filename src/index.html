@@ -6,10 +6,10 @@
   <title>Mishka - magazine</title>
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-  <object id="object" type="image/svg+xml" data="assets/img/symbol/sprite.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+  <object id="object" type="image/svg+xml" data="img/symbol/sprite.svg">
     Your browser does not support SVG
   </object>
 </head>
@@ -21,9 +21,9 @@
       <div class="nav__item-logo-mobile  col-12">
         <a href="/">
           <picture>
-            <source media="(min-width: 1200px)" srcset="assets/img/mishka-logo-des.svg">
-            <source media="(min-width: 768px)" srcset="assets/img/mishka-logo-tablet.svg">
-            <img src="assets/img/mishka-logo-mobile.svg" alt="Mishka logotype">
+            <source media="(min-width: 1200px)" srcset="img/mishka-logo-des.svg">
+            <source media="(min-width: 768px)" srcset="img/mishka-logo-tab.svg">
+            <img src="img/mishka-logo-mob.svg" alt="Mishka logotype">
           </picture>
         </a>
       </div>
@@ -35,9 +35,9 @@
             <li class="nav__item  nav__item-logo  nav__item--active  col-12  col-md">
               <a href="/">
                 <picture>
-                  <source media="(min-width: 1200px)" srcset="assets/img/mishka-logo-des.svg">
-                  <source media="(min-width: 768px)" srcset="assets/img/mishka-logo-tablet.svg">
-                  <img src="assets/img/mishka-logo-mobile.svg" alt="Mishka logotype">
+                  <source media="(min-width: 1200px)" srcset="img/mishka-logo-des.svg">
+                  <source media="(min-width: 768px)" srcset="img/mishka-logo-tab.svg">
+                  <img src="img/mishka-logo-mob.svg" alt="Mishka logotype">
                 </picture>
               </a>
             </li>
@@ -63,44 +63,169 @@
   </div>
 </header>
 <main>
-  <section class="s-hero  container">
-    <div class="hero  row">
-      <div class="hero__inner  col">
-        <p>Милые штуки ручной работы для дома</p>
+  <section class="s-hero">
+    <div class="hero  container">
+      <div class="hero__inner  row">
+        <div class="hero__title  col">
+          <h1>Милые штуки ручной работы для дома</h1>
+        </div>
       </div>
     </div>
   </section>
-  <section class="s-product container">
-    <div class="product  row">
-      <div class="interior  col-12 col-md-6">
-        <p>Предметы <br> интерьера</p>
-      </div>
-      <div class="toys  col-12 col-md-6">
-        <p>Детские <br> игрушки</p>
-      </div>
+
+  <section class="s-product">
+    <div id="tabs" class="product container">
+      <ul class="product__list  row">
+        <li class="col-12 col-md-6 interior">
+          <a href="#tabs-1">
+            <p>Предметы <br> интерьера</p>
+          </a>
+        </li>
+        <li class="col-12 col-md-6 toys">
+          <a href="#tabs-2">
+            <p>Детские <br> игрушки</p>
+          </a>
+        </li>
+      </ul>
+      <article id="tabs-1" class="product__tab  product__basket  row">
+        <div class="product__header">
+          <h2 class="col-12 col-md-10">Вязанные корзинки</h2>
+          <span class="product__promo col-12 col-md-2">Оптом <br> скидка</span>
+        </div>
+        <div class="product__body  row">
+          <div class="product__desc  col-12  col-md-5  col-lg-4  offset-lg-1">
+            <p class="product__intro">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех
+              размерах.</p>
+            <table class="paremeters">
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Цвет:</td>
+                <td class="paremeter__col">«Тиффани»/серый</td>
+              </tr>
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Диаметр:</td>
+                <td class="paremeter__col">25 см</td>
+              </tr>
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Высота:</td>
+                <td class="paremeter__col">15 см</td>
+              </tr>
+            </table>
+          </div>
+          <div class="product__img  col-12  col-md-6  offset-md-1">
+            <a class="galpop-single" href="img/triple-set-des.jpg">
+              <picture>
+                <source media="(min-width:1200px)"
+                        srcset="img/triple-set-des.jpg 1x,
+                                                  img/triple-set-des.jpg@2x 2x">
+                <source media="(min-width:768px)"
+                        srcset="img/triple-set-tab.jpg 1x,
+                                                  img/triple-set-tab.jpg@2x 2x">
+                <img src="img/triple-set-mob.jpg"
+                     srcset="img/triple-set-mob@2x.jpg 2x"
+                     alt="Вязанные корзинки">
+              </picture>
+            </a>
+          </div>
+          <div class="product__order  col-12  col-md-5  col-lg-4  offset-lg-1">
+            <p class="product__price-wrap"><span class="product__price">Цена:</span>
+              <span class="product__value">100$</span></p>
+            <a href="#" class="btn product__btn">Заказать</a>
+          </div>
+        </div>
+      </article>
+      <article id="tabs-2" class="product__tab  product__baran  row">
+        <div class="product__header">
+          <h2 class="col-12 col-md-10">Вязанный баран</h2>
+          <span class="product__promo col-12 col-md-2">Оптом <br> скидка</span>
+        </div>
+        <div class="product__body  row">
+          <div class="product__desc  col-12  col-md-5  col-lg-4  offset-lg-1">
+            <p class="product__intro">Экологически чистая пряжа, ручная работа. Шарфики в шести расцветках, бараны
+              в трех размерах.</p>
+            <table class="paremeters">
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Цвет:</td>
+                <td class="paremeter__col">«Тиффани»/серый</td>
+              </tr>
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Высота:</td>
+                <td class="paremeter__col">40 см</td>
+              </tr>
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Длинна:</td>
+                <td class="paremeter__col">22 см</td>
+              </tr>
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Ширина:</td>
+                <td class="paremeter__col">16 см</td>
+              </tr>
+            </table>
+          </div>
+          <div class="product__img  col-12  col-md-6  offset-lg-1">
+            <a class="galpop-single" href="img/baran-des.jpg">
+              <picture>
+                <source media="(min-width:1200px)"
+                        srcset="img/baran-des.jpg 1x,
+                                                          img/baran-des.jpg@2x 2x">
+                <source media="(min-width:768px)"
+                        srcset="img/baran-tab.jpg 1x,
+                                                          img/baran-tab.jpg@2x 2x">
+                <img src="img/baran-mob.jpg"
+                     srcset="img/baran-mob@2x.jpg 2x"
+                     alt="Вязанный баран">
+              </picture>
+            </a>
+          </div>
+          <div class="product__order  col-12  col-md-5  col-lg-4  offset-lg-1">
+            <p class="product__price-wrap"><span class="product__price">Цена:</span>
+              <span class="product__value">120$</span></p>
+            <a href="#" class="btn product__btn">Заказать</a>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
+
+  <section class="s-about">
+    <div class="about"></div>
+  </section>
+  <section class="s-reviews">
+    <div class="reviews"></div>
+  </section>
+  <section class="s-contacts">
+    <div class="contacts"></div>
+  </section>
+
 </main>
-<footer id="footer" class="container">
-  <div class="footer__inner row">
-    <div class="footer-contact col-12 col-md-4">
-      <p>Наши контакты:</p>
-      <p>г. Киев, пр. Оболонский 9</p>
-      <p> +38 (050) 555-55-55</p>
-    </div>
-    <div class="footer__social col-12 col-md-4">
+<footer id="footer">
+  <div class="footer__cont  container">
+    <div class="footer__inner  row">
+      <div class="footer-contact col-12 col-md-4">
+        <p>Наши контакты:</p>
+        <p>г. Киев, пр. Оболонский 9</p>
+        <p> +38 (050) 555-55-55</p>
+      </div>
+      <div class="footer__social col-12 col-md-4">
           <span class="social-list">
             <a class="social-link  btn" href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
             <a class="social-link  btn" href=""><i class="fab fa-twitter" aria-hidden="true"></i></a>
             <a class="social-link  btn" href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
           </span>
+      </div>
+      <div class="footer__copyright col-12 col-md-4">
+        <p>
+          <a href="https://github.com/playua18/">
+            <svg id="github">
+              <use xlink:href="img/symbol/sprite.svg#github"></use>
+            </svg>
+          </a>
+        </p>
+        <p>Сopyright © 2018</p>
+      </div>
     </div>
-    <div class="footer__copyright col-12 col-md-4">
-      <p>Сopyright © 2018</p>
-    </div>
-  </div>
 
-  <div class="col-12  col-md-4  page-footer__social">
+    <div class="col-12  col-md-4  page-footer__social">
+    </div>
   </div>
 </footer>
 <div class="scroll-top" title="Вверх"><span>&#8673</span></div>

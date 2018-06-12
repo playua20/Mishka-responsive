@@ -34,7 +34,6 @@ li {
   display: inline-block;
   text-decoration: none;
   height: 52px;
-  border: 2px solid #444;
   font: $ff2;
   font-size: 16px;
   line-height: 26px;
@@ -43,13 +42,14 @@ li {
   letter-spacing: 2px;
   text-align: center;
   position: relative;
-  color: #444444;
+  color: #444;
   background-color: #fff;
   border-radius: 0;
-  border: none;
+  border: 2px solid #444;
   outline: none;
   transition: background-color .1s ease;
   cursor: pointer;
+  padding: 0;
   &:focus, &:hover {
     text-decoration: none;
     color: #fff;
@@ -77,9 +77,18 @@ li {
   }
 }
 
+h1, h2 {
+  font: $ff2;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000;
+  text-align: center;
+}
+
 h1, h2, h3, h4, h4, h6 {
   color: #000;
   font: $ff2;
+  font-size: 24px;
 }
 
 ul,
@@ -96,21 +105,36 @@ ol {
   left: 9999px;
 }
 
-//// tablet start
-//@media (min-width: 768px) {
-//  /* перебиваем стили бутстрап, что бы не было зазоров между col-md-4 */
-//  .col-md-4 {
-//    flex: 0 0 33.33334%;
-//    max-width: 33.33334%;
-//  }
-//
-//  h2, h3, h4, h4, h6 {
-//    font-size: 21px;
-//  }
-//
-//  h1 {
-//    font-size: 30px;
-//  }
-//
-//  // tablet end
-//}
+// mobile only start
+@media (max-width: 767px) {
+
+  .container {
+    max-width: 100%;
+  }
+
+// mobile only end
+}
+
+// tablet start
+@media (min-width: 768px) {
+  h1, h2 {
+    font: $ff2;
+    font-size: 40px;
+    line-height: 56px;
+    color: #000;
+  }
+// tablet end
+}
+
+// desktop start
+@media (min-width: 1200px) {
+  h1, h2 {
+    font: $ff2;
+    font-size: 50px;
+    line-height: 72px;
+    color: #000;
+  }
+
+// desktop end
+}
+

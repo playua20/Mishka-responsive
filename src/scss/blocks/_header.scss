@@ -14,6 +14,7 @@
 }
 
 .header__inner {
+  @include mw();
   position: relative;
 }
 
@@ -24,10 +25,10 @@
 
 .header__bot {
   position: absolute;
-  min-height: 65px;
+  min-height: 64px;
   width: 300px;
   right: 0;
-  padding-top: 16px;
+  padding-top: 17px;
 }
 
 .nav {
@@ -43,8 +44,8 @@
   display: flex;
   position: relative;
   vertical-align: top;
-  //padding: 0 !important;
   a {
+    position: relative;
     display: inline-block;
     width: 100%;
     text-decoration: none;
@@ -65,7 +66,10 @@
 .nav__item-logo-mobile img,
 .nav__item-logo img {
   width: 86px;
-  //filter: hue-rotate(90deg) grayscale(50%) opacity(.1);
+  //filter: contrast(200%) brightness(150%) hue-rotate(90deg) grayscale(50%) opacity(.1);
+  filter: contrast(200%) hue-rotate(180deg);
+  //filter:;
+
   &:hover {
     filter: opacity(.5);
   }
@@ -154,7 +158,7 @@
 @media (min-width: 768px) and (max-width: 1199px) {
   .nav__item:nth-child(-n+2) {
     position: absolute;
-    bottom: -65px;
+    bottom: -64px;
     z-index: 1;
     width: 30%;
     a {

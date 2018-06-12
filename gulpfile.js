@@ -17,7 +17,8 @@ const gulp = require('gulp'),
 svgSprite = require('gulp-svg-sprite'),
   replace = require('gulp-replace'),
   cheerio = require('gulp-cheerio'),
-  svgmin = require('gulp-svgmin');
+  svgmin = require('gulp-svgmin'),
+  spriteSmith = require('gulp.spritesmith');
 
 gulp.task('css', function () {
   return gulp.src('src/scss/style.scss')
@@ -48,6 +49,7 @@ gulp.task('css-libs', function () {
     'src/libs/jquery-ui/themes/base/jquery-ui.min.css',
     'src/libs/jquery-ui/themes/smoothness/jquery-ui.min.css',
     'src/libs/css-hamburgers/_sass/hamburgers/hamburgers.scss',
+    'src/libs/galpop/css/jquery.galpop.css',
   ])
     .pipe(sass())
     .pipe(concat('libs.min.css'))
@@ -94,8 +96,9 @@ gulp.task('js-libs', function () {
   return gulp.src([
     'src/libs/jquery/dist/jquery.min.js',
     'src/libs/jquery-ui/jquery-ui.min.js',
-    // 'src/libs/bootstrap/dist/js/bootstrap.js',s
-    'src/libs/font-awesome/svg-with-js/js/fontawesome-all.min.js',
+    // 'src/libs/bootstrap/dist/js/bootstrap.js',
+    // 'src/libs/font-awesome/svg-with-js/js/fontawesome-all.min.js',
+    'src/libs/galpop/js/jquery.galpop.js',
     // 'src/libs/jssocials/dist/jssocials.js',
   ])
     .pipe(concat('libs.min.js'))
@@ -104,7 +107,7 @@ gulp.task('js-libs', function () {
 });
 
 gulp.task('img', function () {
-  return gulp.src('src/assets/img/**/*')
+  return gulp.src('src/img/**/*')
     .pipe(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
@@ -116,11 +119,11 @@ gulp.task('img', function () {
       //   ]
       // })
     ]))
-    .pipe(gulp.dest('dist/assets/img/'));
+    .pipe(gulp.dest('dist/img/'));
 });
 
 gulp.task('svg', () => {
-  return gulp.src('src/assets/img/**/*.svg')
+  return gulp.src('src/img/**/*.svg')
     .pipe(svgmin({
       js2svg: {
         pretty: true
@@ -148,7 +151,19 @@ gulp.task('svg', () => {
         }
       }
     ))
-    .pipe(gulp.dest('src/assets/img'));
+    .pipe(gulp.dest('src/img'));
+});
+
+gulp.task('sprite', (cb)=> {
+  const spriteData = gulp.src('src/img/icons/*.png').pipe(spriteSmith({
+      imgName: 'sprite.png',
+      imgPath: '../img/sprite.png',
+      cssName: '_sprite.scss'
+    }));
+
+    spriteData.img.pipe(gulp.dest('src/img'));
+    spriteData.css.pipe(gulp.dest('src/scss'));
+  cb();
 });
 
 gulp.task('watch', ['clear', 'browser-sync', 'css-libs', 'css', 'js-libs', 'js'], function () {
@@ -173,11 +188,11 @@ gulp.task('build', function (fn) {
   const buildHtml = gulp.src('src/*.html')
     .pipe(gulp.dest('dist'))
 
-  const buildFonts = gulp.src('src/assets/fonts/**/*')
-    .pipe(gulp.dest('dist/assets/fonts'))
+  const buildFonts = gulp.src('src/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'))
 
-  // const buildImg = gulp.src('src/assets/img/**/*')
-  //   .pipe(gulp.dest('dist/assets/img/'))
+  // const buildImg = gulp.src('src/img/**/*')
+  //   .pipe(gulp.dest('dist/img/'))
 
   const buildJs = gulp.src('src/js/**/*')
     .pipe(gulp.dest('dist/js'))

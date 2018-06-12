@@ -18,7 +18,12 @@ $(function () {
   });
 });
 
-// $(function () {
-//   var height = $('.header__bot').outerHeight();
-//   $('.header__bot').change().css("bottom", - height);
-// });
+$(function () {
+  $("#tabs").tabs();
+});
+
+$(function() {
+  $('.galpop-single').galpop({
+    lockScroll: false,
+  });
+});
