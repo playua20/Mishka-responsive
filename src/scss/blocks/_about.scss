@@ -1,0 +1,78 @@
+.about {
+  @include cf();
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.about__title {
+  margin-bottom: 45px;
+}
+
+.about__item {
+  position: relative;
+  font: $ff2;
+  font-size: 20px;
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+.about__item span {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  height: 50px;
+  width: 50px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.icon-eco::before {
+    @include sprite($icon-1);
+  }
+  &.icon-love::before {
+    @include sprite($icon-2);
+  }
+  &.icon-style::before {
+    @include sprite($icon-3);
+  }
+  &.icon-support::before {
+    @include sprite($icon-4);
+  }
+  &.icon-like::before {
+    @include sprite($icon-5);
+  }
+  &.icon-gift::before {
+    @include sprite($icon-6);
+  }
+
+}
+
+// mobile only start
+@media (max-width: 767px) {
+  .about__title {
+    margin-bottom: 30px;
+  }
+  .about__item {
+    padding-top: 60px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+// mobile only end
+}
+
+// desktop start
+@media (min-width: 1200px) {
+  .about__item {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .about__item span {
+    left: 100px;
+  }
+
+  // desktop end
+}

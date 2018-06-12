@@ -108,6 +108,10 @@ ol {
 // mobile only start
 @media (max-width: 767px) {
 
+  h2 {
+    text-align: left;
+  }
+
   .container {
     max-width: 100%;
   }
