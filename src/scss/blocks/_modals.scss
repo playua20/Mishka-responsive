@@ -1,0 +1,55 @@
+.modals {
+  position: fixed;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 50px;
+  box-shadow: 0 0 25px rgba(#ccc, .35);
+  border: 3px double rgba(#f9f, .35);
+  z-index: 9999;
+}
+#modal-overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  //pointer-events: none;
+  z-index: 998;
+  background: rgba(#f9f, .15);
+}
+.preloader {
+  display: none;
+}
+
+.buy-modal {
+  display: none;
+  .buy-btn {
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: #fff !important;
+      background-color: #444444;
+    }
+    &:active {
+      background-color: #444444;
+      color: #8d8d8d !important;
+    }
+    &:disabled {
+      opacity: .5;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.review-modal {
+  display: none;
+}

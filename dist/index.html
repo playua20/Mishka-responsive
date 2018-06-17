@@ -76,18 +76,84 @@
   <section class="s-product">
     <div id="tabs" class="product container">
       <ul class="product__list  row">
-        <li class="col-12 col-md-6 interior">
-          <a href="#tabs-1">
-            <p>Предметы <br> интерьера</p>
-          </a>
-        </li>
         <li class="col-12 col-md-6 toys">
-          <a href="#tabs-2">
+          <a href="#tabs-1">
             <p>Детские <br> игрушки</p>
           </a>
         </li>
+        <li class="col-12 col-md-6 interior">
+          <a href="#tabs-2">
+            <p>Предметы <br> интерьера</p>
+          </a>
+        </li>
       </ul>
-      <article id="tabs-1" class="product__tab  product__basket  row">
+
+      <article id="tabs-1" class="product__tab  product__baran  row">
+        <div class="product__header">
+          <h2 class="col-12 col-md-10">Вязанный баран</h2>
+          <span class="product__promo col-12 col-md-2">Оптом <br> скидка</span>
+        </div>
+        <div class="product__body  row">
+          <div class="product__desc  col-12  col-md-5  col-lg-4  offset-lg-1">
+            <p class="product__intro">Экологически чистая пряжа, ручная работа. Шарфики в шести расцветках, бараны
+              в трех размерах.</p>
+            <table class="paremeters">
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Цвет:</td>
+                <td class="paremeter__col">
+                  <label for="radio-1" title="пинк" class="ui-checkboxradio-checked ui-state-active"></label>
+                  <input type="radio" name="radio-1" data-img="pink" id="radio-1">
+                  <label for="radio-2" title="бирюза"></label>
+                  <input type="radio" name="radio-1" data-img="turquoise" id="radio-2">
+                  <label for="radio-3" title="красный"></label>
+                  <input type="radio" name="radio-1" data-img="red" id="radio-3">
+                  <label for="radio-4" title="зелёный"></label>
+                  <input type="radio" name="radio-1" data-img="green" id="radio-4">
+                  <label for="radio-5" title="желтый"></label>
+                  <input type="radio" name="radio-1" data-img="yellow" id="radio-5">
+                  <label for="radio-6" title="синий"></label>
+                  <input type="radio" name="radio-1" data-img="blue" id="radio-6">
+                </td>
+              </tr>
+              <tr class="paremeter__row  paremeter__height">
+                <td class="paremeter__col  paremeter__height">Высота:</td>
+                <td class="paremeter__col  paremeter__height-value">40 см</td>
+              </tr>
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Длинна:</td>
+                <td class="paremeter__col">22 см</td>
+              </tr>
+              <tr class="paremeter__row">
+                <td class="paremeter__col">Ширина:</td>
+                <td class="paremeter__col">16 см</td>
+              </tr>
+            </table>
+          </div>
+          <div class="product__img  col-12  col-md-6  offset-lg-1">
+            <a class="test-popup-link  product__img-link" href="img/baran/baran-des-red@2x.jpg">
+            <!--<a class="galpop-single product__img-link" href="img/baran/baran-des-pink.jpg">-->
+              <picture>
+                <source media="(min-width:1200px)"
+                        srcset="img/baran/baran-des-pink.jpg 1x,
+                                                          img/baran/baran-des-pink.jpg@2x 2x">
+                <source media="(min-width:768px)"
+                        srcset="img/baran/baran-tab-pink.jpg 1x,
+                                                          img/baran/baran-tab-pink.jpg@2x 2x">
+                <img src="img/baran/baran-mob-pink.jpg"
+                     srcset="img/baran/baran-mob-pink@2x.jpg 2x"
+                     alt="Вязанный баран">
+              </picture>
+            </a>
+          </div>
+          <div class="product__order  col-12  col-md-5  col-lg-4  offset-lg-1">
+            <p class="product__price-wrap"><span class="product__price">Цена:</span>
+              <span class="product__value">120$</span></p>
+            <div href="#" class="btn product__btn">Заказать</div>
+          </div>
+        </div>
+      </article>
+
+      <article id="tabs-2" class="product__tab  product__basket  row">
         <div class="product__header">
           <h2 class="col-12 col-md-10">Вязанные корзинки</h2>
           <span class="product__promo col-12 col-md-2">Оптом <br> скидка</span>
@@ -112,7 +178,7 @@
             </table>
           </div>
           <div class="product__img  col-12  col-md-6  offset-md-1">
-            <a class="galpop-single" href="img/triple-set-des.jpg">
+            <a class="galpop-single product__img-link" href="img/triple-set-des.jpg">
               <picture>
                 <source media="(min-width:1200px)"
                         srcset="img/triple-set-des.jpg 1x,
@@ -133,77 +199,65 @@
           </div>
         </div>
       </article>
-      <article id="tabs-2" class="product__tab  product__baran  row">
-        <div class="product__header">
-          <h2 class="col-12 col-md-10">Вязанный баран</h2>
-          <span class="product__promo col-12 col-md-2">Оптом <br> скидка</span>
-        </div>
-        <div class="product__body  row">
-          <div class="product__desc  col-12  col-md-5  col-lg-4  offset-lg-1">
-            <p class="product__intro">Экологически чистая пряжа, ручная работа. Шарфики в шести расцветках, бараны
-              в трех размерах.</p>
-            <table class="paremeters">
-              <tr class="paremeter__row">
-                <td class="paremeter__col">Цвет:</td>
-                <td class="paremeter__col">«Тиффани»/серый</td>
-              </tr>
-              <tr class="paremeter__row">
-                <td class="paremeter__col">Высота:</td>
-                <td class="paremeter__col">40 см</td>
-              </tr>
-              <tr class="paremeter__row">
-                <td class="paremeter__col">Длинна:</td>
-                <td class="paremeter__col">22 см</td>
-              </tr>
-              <tr class="paremeter__row">
-                <td class="paremeter__col">Ширина:</td>
-                <td class="paremeter__col">16 см</td>
-              </tr>
-            </table>
-          </div>
-          <div class="product__img  col-12  col-md-6  offset-lg-1">
-            <a class="galpop-single" href="img/baran-des.jpg">
-              <picture>
-                <source media="(min-width:1200px)"
-                        srcset="img/baran-des.jpg 1x,
-                                                          img/baran-des.jpg@2x 2x">
-                <source media="(min-width:768px)"
-                        srcset="img/baran-tab.jpg 1x,
-                                                          img/baran-tab.jpg@2x 2x">
-                <img src="img/baran-mob.jpg"
-                     srcset="img/baran-mob@2x.jpg 2x"
-                     alt="Вязанный баран">
-              </picture>
-            </a>
-          </div>
-          <div class="product__order  col-12  col-md-5  col-lg-4  offset-lg-1">
-            <p class="product__price-wrap"><span class="product__price">Цена:</span>
-              <span class="product__value">120$</span></p>
-            <a href="#" class="btn product__btn">Заказать</a>
-          </div>
-        </div>
-      </article>
+
     </div>
   </section>
 
   <section class="s-about">
     <div class="about  container">
-      <div class="about__title">
-        <h2>Коротко о нас:</h2>
+      <div class="about__title  title  col-lg-10  offset-lg-1">
+        <h2 class="">Коротко о нас:</h2>
       </div>
-      <ul class="about__list row">
+      <ul class="about__list row col-lg-10  offset-lg-1">
         <li class="about__item col-12 col-md-6"><span class="icon-eco"></span>Экологически чистые материалы</li>
-        <li class="about__item col-12 col-md-6"><span class="icon-love"></span>Скандинавский стиль по российской цене</li>
+        <li class="about__item col-12 col-md-6"><span class="icon-love"></span>Скандинавский стиль по смешной цене
+        </li>
         <li class="about__item col-12 col-md-6"><span class="icon-style"></span>Увеличивает лайки на фотографиях</li>
-        <li class="about__item col-12 col-md-6"><span class="icon-support"></span>Связано вручную с любовью и умилением</li>
-        <li class="about__item col-12 col-md-6"><span class="icon-like"></span>Поддержка отечественного производителя</li>
+        <li class="about__item col-12 col-md-6"><span class="icon-support"></span>Связано вручную с любовью и
+          умилением
+        </li>
+        <li class="about__item col-12 col-md-6"><span class="icon-like"></span>Поддержка отечественного производителя
+        </li>
         <li class="about__item col-12 col-md-6"><span class="icon-gift"></span>Поставляется в подарочной упаковке</li>
       </ul>
     </div>
   </section>
 
   <section class="s-reviews">
-    <div class="reviews  container">
+    <div class="reviews__container  container">
+      <div class="reviews  row">
+        <div class="title  reviews__title  col-12  col-md-6  offset-lg-2">
+          <h2>Отзывы:</h2>
+        </div>
+        <button class="btn  reviews__btn  col-md-3  col-lg-2  ml-md-auto  align-self-center  order-12  order-md-0">
+          Написать
+        </button>
+        <ul class="reviews__slider  col-12  bxslider">
+          <li class="reviews__item  col-12  col-lg-8  offset-lg-2">
+            <p>Я молодая мама, но все равно фотографии не набирали и близко такого количества лайков, как у популярных
+              инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке и мои фотографии сразу стали более
+              стильнее, а также набирают больше лайков!</p>
+            <b class="review__auth">
+              Анастасия Красильникова
+            </b>
+          </li>
+          <li class="reviews__item  col-12  col-lg-8  offset-lg-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur cum dignissimos dolor earum
+              eligendi expedita id impedit ipsam itaque labore.</p>
+            <b class="review__auth">
+              Петя
+            </b>
+          </li>
+          <li class="reviews__item  col-12  col-lg-8  offset-lg-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, consequatur, dignissimos distinctio
+              doloribus facilis fugit ipsam maiores nam odit omnis porro quidem repellat, similique sint tempora tenetur
+              ullam voluptatibus voluptatum?</p>
+            <b class="review__auth">
+              Maria
+            </b>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -243,6 +297,40 @@
     </div>
   </div>
 </footer>
+<div class="buy-modal  modals">
+  <b>Свяжитесь с нами:</b><br><br>
+  <p>+38 (050) 555-55-55</p>
+  <p>+38 (063) 666-66-66</p>
+  <!--<a class="buy-btn  btn">Ok</a>-->
+  <input type="button" class="buy-btn  btn" value="Ok">
+</div>
+<div class="review-modal  modals">
+  <form id="review-form" action="" method="post">
+    <p class="review__product"></p>
+    <p class="review__height"></p>
+    <p class="review__price"></p>
+    <button class="review__btn btn" type="submit">Подтвердить заказ</button>
+    <div class="review-preloader  preloader">
+      <div id="fountainTextG">
+        <div id="fountainTextG_1" class="fountainTextG">З</div>
+        <div id="fountainTextG_2" class="fountainTextG">а</div>
+        <div id="fountainTextG_3" class="fountainTextG">г</div>
+        <div id="fountainTextG_4" class="fountainTextG">р</div>
+        <div id="fountainTextG_5" class="fountainTextG">у</div>
+        <div id="fountainTextG_6" class="fountainTextG">з</div>
+        <div id="fountainTextG_7" class="fountainTextG">к</div>
+        <div id="fountainTextG_8" class="fountainTextG">а</div>
+      </div>
+    </div>
+    <button class="review__close btn" type="button" title="Отменить">Отменить</button>
+  </form>
+  <div class="review__success">
+    <b>Заказ принят! Скоро Вам перезвонят!</b>
+    <p>Если Вам не перезвонили, свяжитесь с нами: <br> +38 (050) 555-55-55</p>
+  </div>
+
+</div>
+<div id="modal-overlay"></div>
 <div class="scroll-top" title="Вверх"><span>&#8673</span></div>
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/style.min.css">

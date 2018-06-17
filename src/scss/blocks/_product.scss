@@ -1,3 +1,14 @@
+.ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-icon, .ui-checkboxradio-radio-label.ui-checkboxradio-checked:hover .ui-icon {
+  background-image: none;
+  width: 16px;
+  height: 16px;
+  background: #f9f;
+  //border-width: 8px;
+  border-style: solid;
+  border-color: azure;
+  box-shadow: inset 0 0 5px #000;
+}
+
 .product {
   @include cf();
   position: relative;
@@ -95,7 +106,7 @@
     padding-bottom: 5px;
   }
   .paremeter__col:first-child {
-    min-width: 90px;
+    width: 90px;
   }
 }
 

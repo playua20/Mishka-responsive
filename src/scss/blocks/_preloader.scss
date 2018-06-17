@@ -1,0 +1,57 @@
+#fountainTextG{
+  width:240px;
+  margin:auto;
+}
+
+.fountainTextG{
+  color:rgb(99,209,187);
+  font-family:Arial;
+  font-size:25px;
+  text-decoration:none;
+  font-weight:normal;
+  font-style:normal;
+  float:left;
+  animation-name:bounce_fountainTextG;
+  animation-duration:1.451s;
+  animation-iteration-count:infinite;
+  animation-direction:normal;
+  transform:scale(.5);
+}#fountainTextG_1{
+   animation-delay:0.5225s;
+ }
+#fountainTextG_2{
+  animation-delay:0.619s;
+}
+#fountainTextG_3{
+  animation-delay:0.7255s;
+}
+#fountainTextG_4{
+  animation-delay:0.832s;
+}
+#fountainTextG_5{
+  animation-delay:0.9385s;
+}
+#fountainTextG_6{
+  animation-delay:1.035s;
+}
+#fountainTextG_7{
+  animation-delay:1.1415s;
+}
+#fountainTextG_8{
+  animation-delay:1.248s;
+}
+
+
+
+
+@keyframes bounce_fountainTextG{
+  0%{
+    transform:scale(1);
+    color:rgb(99,209,187);
+  }
+
+  100%{
+    transform:scale(.5);
+    color:rgba(255,163,218,0.97);
+  }
+}

@@ -1,0 +1,253 @@
+.bx-wrapper {
+  box-shadow: none;
+  margin-top: -120px;
+  border: none;
+}
+
+.reviews__title {
+  margin-bottom: 0;
+}
+
+.reviews__title,
+.reviews__btn {
+  z-index: 2;
+}
+
+.bx-wrapper,
+.bx-viewport {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.bx-wrapper:hover .bx-viewport {
+  //overflow: visible !important;
+}
+
+.bx-viewport {
+  border: none;
+}
+
+.reviews__item {
+  width: auto !important;
+  padding-top: 180px;
+  padding-bottom: 100px;
+  p {
+    //max-height: 120px;
+    //text-overflow: ellipsis;
+    //overflow: hidden;
+    //transition: 1s;
+  }
+  &:hover p {
+    //height: auto;
+    overflow: visible;
+  }
+}
+
+.bx-wrapper:hover .reviews__item p {
+  //height: auto;
+  //overflow: visible;
+}
+
+.reviews__more {
+  position: relative;
+  &::after {
+    content: '->>';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #f9f;
+  }
+}
+
+.bx-wrapper .bx-controls-direction a {
+  //background: #000;
+}
+
+.bx-wrapper .bx-prev,
+.bx-wrapper .bx-next {
+  height: 50px !important;
+  width: 70px !important;
+  &:hover {
+    filter: opacity(.75);
+  }
+  &:active {
+    filter: opacity(.5);
+  }
+}
+
+.bx-wrapper .bx-prev,
+.bx-wrapper .bx-next {
+  width: 70px;
+  position: absolute;
+}
+
+.bx-wrapper .bx-prev {
+  //@include sprite($huge-arrow-left);
+  //&:hover,
+  //&:focus {
+  //  @include sprite($huge-arrow-left);
+  //}
+  background: url('../img/icons/huge-arrow-left.png') 50% no-repeat;
+  &:hover,
+  &:focus {
+    background: url('../img/icons/huge-arrow-left.png') 50% no-repeat;
+  }
+}
+
+.bx-wrapper .bx-next {
+  //@include sprite($huge-arrow-right);
+  //&:hover,
+  //&:focus {
+  //  @include sprite($huge-arrow-right);
+  //}
+  background: url('../img/icons/huge-arrow-right.png') 50% no-repeat;
+  &:hover,
+  &:focus {
+    background: url('../img/icons/huge-arrow-right.png') 50% no-repeat;
+  }
+}
+
+.bx-wrapper .bx-controls-direction a {
+  top: auto;
+  bottom: 110px;
+}
+
+.bx-wrapper .bx-controls-direction a.bx-prev {
+  right: 106px;
+  left: auto;
+}
+
+.bx-wrapper .bx-controls-direction a.bx-next {
+  right: 20px;
+  left: auto;
+}
+
+// mobile only start
+@media (max-width: 767px) {
+  .reviews__title {
+    margin-left: 15px;
+  }
+  .bx-wrapper {
+    margin-top: 0;
+  }
+  .bx-viewport {
+    @include cf();
+  }
+  .bx-viewport {
+    position: relative;
+    &::before {
+      bottom: 12px;
+      content: '';
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      height: 50px;
+      width: 1px;
+      background: #ececec;
+    }
+    //&::before,
+    //&::after {
+    //  content: '';
+    //  position: absolute;
+    //  bottom: 0;
+    //  height: 50px;
+    //  width: 50%;
+    //  border: 1px solid #ececec;
+    //}
+    //&::before {
+    //  left: 0;
+    //  margin-left: 30px;
+    //}
+    //&::after {
+    //  right: 0;
+    //  margin-right: 30px;
+    //}
+  }
+  .reviews__item {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 90px;
+    padding-top: 30px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .bx-wrapper .bx-prev,
+  .bx-wrapper .bx-next {
+    width: 50% !important;
+  }
+  .bx-wrapper .bx-controls-direction a {
+    position: absolute;
+    top: auto;
+    bottom: 12px;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid #ececec;
+    }
+    &.bx-prev {
+      left: 25px;
+      &::before {
+        border-right: none;
+      }
+    }
+    &.bx-next {
+      right: 25px;
+      &::before {
+        border-left: none;
+      }
+    }
+  }
+  .reviews__btn {
+    display: block;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  // mobile only end
+}
+
+// tablet start
+@media (min-width: 768px) {
+
+  .bx-viewport {
+    background: url('../img/review.jpg') 0 100% no-repeat;
+  }
+  .reviews__btn {
+    margin-right: 15px;
+  }
+
+  // tablet end
+}
+
+// tablet only start
+@media (min-width: 768px) and (max-width: 1199px) {
+  .bx-viewport {
+    @include cf();
+  }
+
+  .reviews__title {
+    margin-left: 50px;
+  }
+
+  .reviews__btn {
+    margin-right: 50px;
+  }
+
+  .bx-wrapper .bx-controls-direction a.bx-prev {
+    right: 152px;
+    left: auto;
+  }
+
+  .bx-wrapper .bx-controls-direction a.bx-next {
+    right: 66px;
+    left: auto;
+  }
+
+  // tablet only end
+}

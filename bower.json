@@ -22,7 +22,10 @@
     "jquery-ui": "^1.12.1",
     "normalize.css": "^8.0.0",
     "css-hamburgers": "^0.9.3",
-    "galpop": "^1.0.9"
+    "galpop": "^1.0.9",
+    "bxslider-4": "fafnur-bxslider#^4.2.15",
+    "phpmailer": "^6.0.5",
+    "magnific-popup": "^1.1.0"
   },
   "devDependencies": {}
 }

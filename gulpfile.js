@@ -49,7 +49,9 @@ gulp.task('css-libs', function () {
     'src/libs/jquery-ui/themes/base/jquery-ui.min.css',
     'src/libs/jquery-ui/themes/smoothness/jquery-ui.min.css',
     'src/libs/css-hamburgers/_sass/hamburgers/hamburgers.scss',
-    'src/libs/galpop/css/jquery.galpop.css',
+    // 'src/libs/galpop/css/jquery.galpop.css',
+    'src/libs/bxslider-4/dist/jquery.bxslider.min.css',
+    'src/libs/magnific-popup/dist/magnific-popup.css',
   ])
     .pipe(sass())
     .pipe(concat('libs.min.css'))
@@ -98,7 +100,9 @@ gulp.task('js-libs', function () {
     'src/libs/jquery-ui/jquery-ui.min.js',
     // 'src/libs/bootstrap/dist/js/bootstrap.js',
     // 'src/libs/font-awesome/svg-with-js/js/fontawesome-all.min.js',
-    'src/libs/galpop/js/jquery.galpop.js',
+    // 'src/libs/galpop/js/jquery.galpop.js',
+    'src/libs/bxslider-4/dist/jquery.bxslider.min.js',
+    'src/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
     // 'src/libs/jssocials/dist/jssocials.js',
   ])
     .pipe(concat('libs.min.js'))
