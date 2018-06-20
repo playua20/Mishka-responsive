@@ -4,9 +4,60 @@
     margin: 0;
   }
 }
-
 .footer__inner {
   @include cf();
+  min-height: 143px;
+  align-items: center;
+}
+.footer__logo {
+  text-align: left;
+  &-link {
+    display: inline-block;
+    width: 102px;
+    height: 34px;
+    @include  sprite($logo-footer);
+    &:hover {
+      @include  sprite($logo-footer-hv);
+    }
+    &:active {
+      opacity: .5;
+    }
+  }
+}
+.footer__social {
+  text-align: center;
+}
+.footer__copyright {
+  text-align: right;
+}
+
+.social-link {
+  display: inline-block;
+  margin-right: 15px;
+  &:last-child {
+    margin-right: 0;
+  }
+  &-ins {
+    @include sprite($ins);
+    &:hover {
+      @include sprite($ins-hv);
+    }
+  }
+  &-fb {
+    @include sprite($fb);
+    &:hover {
+      @include sprite($fb-hv);
+    }
+  }
+  &-tw {
+    @include sprite($tw);
+    &:hover {
+      @include sprite($tw-hv);
+    }
+  }
+  &:active {
+    opacity: .5;
+  }
 }
 
 #github {
@@ -14,4 +65,15 @@
   height: 20px;
   fill: #ccc;
   //stroke: #4eb305;
+}
+
+// mobile only start
+@media (max-width: 767px) {
+  .footer__logo {
+    display: none;
+  }
+  .footer__copyright {
+    text-align: center;
+  }
+// mobile only end
 }

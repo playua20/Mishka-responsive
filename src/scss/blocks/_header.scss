@@ -55,6 +55,12 @@
     padding-top: 35px;
     padding-bottom: 35px;
     margin: auto;
+    &:hover {
+      opacity: .5;
+    }
+    &:active {
+      opacity: .25;
+    }
   }
 }
 

@@ -12,6 +12,9 @@
   <object id="object" type="image/svg+xml" data="img/symbol/sprite.svg">
     Your browser does not support SVG
   </object>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt11LYPBA2uJRs5cUa3glS04MCZ0xpXEw&callback=initMap">
+  </script>
 </head>
 
 <body>
@@ -131,15 +134,15 @@
           </div>
           <div class="product__img  col-12  col-md-6  offset-lg-1">
             <a class="test-popup-link  product__img-link" href="img/baran/baran-des-red@2x.jpg">
-            <!--<a class="galpop-single product__img-link" href="img/baran/baran-des-pink.jpg">-->
+              <!--<a class="galpop-single product__img-link" href="img/baran/baran-des-pink.jpg">-->
               <picture>
-                <source media="(min-width:1200px)"
+                <source class="img-des" media="(min-width:1200px)"
                         srcset="img/baran/baran-des-pink.jpg 1x,
                                                           img/baran/baran-des-pink.jpg@2x 2x">
-                <source media="(min-width:768px)"
+                <source class="img-tab" media="(min-width:768px)"
                         srcset="img/baran/baran-tab-pink.jpg 1x,
                                                           img/baran/baran-tab-pink.jpg@2x 2x">
-                <img src="img/baran/baran-mob-pink.jpg"
+                <img class="img-mob" src="img/baran/baran-mob-pink.jpg"
                      srcset="img/baran/baran-mob-pink@2x.jpg 2x"
                      alt="Вязанный баран">
               </picture>
@@ -224,13 +227,13 @@
   </section>
 
   <section class="s-reviews">
-    <div class="reviews__container  container">
+    <div class="reviews__container">
       <div class="reviews  row">
         <div class="title  reviews__title  col-12  col-md-6  offset-lg-2">
           <h2>Отзывы:</h2>
         </div>
         <button class="btn  reviews__btn  col-md-3  col-lg-2  ml-md-auto  align-self-center  order-12  order-md-0">
-          Написать
+          Написать отзыв
         </button>
         <ul class="reviews__slider  col-12  bxslider">
           <li class="reviews__item  col-12  col-lg-8  offset-lg-2">
@@ -262,23 +265,52 @@
   </section>
 
   <section class="s-contacts">
-    <div class="contacts"></div>
+    <div class="contacts row">
+      <div class="contacts__info col-12  col-lg-4 offset-lg-2">
+        <div class="title">
+          <h2>Контакты</h2>
+        </div>
+        <div class="contacts__list row">
+          <div class="contacts__mail col-12 col-md-6 col-lg-12 row">
+            <div class="contacts__col-left col-3"><span>e-mail:</span></div>
+            <div class="contacts__col-right col-9">
+              admin@mishkas.kl.com.ua
+            </div>
+          </div>
+          <div class="contacts__address col-12 col-md-6 col-lg-12 row">
+            <div class="contacts__col-left col-3"><span>адрес:</span></div>
+            <div class="contacts__col-right col-9">
+              г.Киев
+              <br>
+              пр. Оболонский 9б
+              <br>
+              +38 (050) 555-55-55
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contacts__map col-12 col-lg-6">
+        <div id="map"></div>
+      </div>
+      <button class="btn  contacts__btn  col-md-5 col-lg-3 offset-lg-2  mr-lg-auto">
+        Напишите нам
+      </button>
+    </div>
   </section>
 
 </main>
 <footer id="footer">
   <div class="footer__cont  container">
     <div class="footer__inner  row">
-      <div class="footer-contact col-12 col-md-4">
-        <p>Наши контакты:</p>
-        <p>г. Киев, пр. Оболонский 9</p>
-        <p> +38 (050) 555-55-55</p>
+      <div class="footer__logo col-12 col-md-4">
+        <a class="footer__logo-link" href="/">
+        </a>
       </div>
       <div class="footer__social col-12 col-md-4">
           <span class="social-list">
-            <a class="social-link  btn" href=""><i class="fab fa-facebook" aria-hidden="true"></i></a>
-            <a class="social-link  btn" href=""><i class="fab fa-twitter" aria-hidden="true"></i></a>
-            <a class="social-link  btn" href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            <a class="social-link  social-link-ins" href=""></a>
+            <a class="social-link  social-link-fb" href=""></a>
+            <a class="social-link  social-link-tw" href=""></a>
           </span>
       </div>
       <div class="footer__copyright col-12 col-md-4">
@@ -292,9 +324,6 @@
         <p>Сopyright © 2018</p>
       </div>
     </div>
-
-    <div class="col-12  col-md-4  page-footer__social">
-    </div>
   </div>
 </footer>
 <div class="buy-modal  modals">
@@ -306,9 +335,9 @@
 </div>
 <div class="review-modal  modals">
   <form id="review-form" action="" method="post">
-    <p class="review__product"></p>
-    <p class="review__height"></p>
-    <p class="review__price"></p>
+    <input name="review-name" type="text" class="review__name" placeholder="Кира Гоцман">
+    <input name="review-email" type="email" class="review__email" placeholder="kira@gmail.com">
+    <textarea name="review-msg" class="review__msg" placeholder="Ваш отзыв..." cols="4"></textarea>
     <button class="review__btn btn" type="submit">Подтвердить заказ</button>
     <div class="review-preloader  preloader">
       <div id="fountainTextG">
@@ -324,11 +353,6 @@
     </div>
     <button class="review__close btn" type="button" title="Отменить">Отменить</button>
   </form>
-  <div class="review__success">
-    <b>Заказ принят! Скоро Вам перезвонят!</b>
-    <p>Если Вам не перезвонили, свяжитесь с нами: <br> +38 (050) 555-55-55</p>
-  </div>
-
 </div>
 <div id="modal-overlay"></div>
 <div class="scroll-top" title="Вверх"><span>&#8673</span></div>

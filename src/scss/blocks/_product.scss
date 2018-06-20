@@ -58,6 +58,9 @@
       transition: .2s;
     }
   }
+  &:active p {
+    color: rgba(#fff, .5);
+  }
 }
 
 .interior a,
@@ -218,6 +221,7 @@
 // tablet start
 @media (min-width: 768px) {
   .product::after {
+    height: 23px;
     background: url('/img/zigzag-line-desktop.png') 50% 0 repeat-x;
   }
   .product__tab {

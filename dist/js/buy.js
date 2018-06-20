@@ -5,7 +5,7 @@ $(function (e) {
       $(".buy-status").hide();
       $('.buy-preloader').show();
       $.ajax({
-        url: "php/buy.php",
+        url: "php/review.php",
         type: "POST",
         dataType: 'json',
         cache: false,

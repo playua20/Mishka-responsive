@@ -3,13 +3,9 @@ require('keys.php');
 require('phpmailer/src/PHPMailer.php');
 require('phpmailer/src/SMTP.php');
 
-$name = filter_var($_POST["product"], FILTER_SANITIZE_STRING);
-$name = filter_var($_POST["height"], FILTER_SANITIZE_STRING);
-$name = filter_var($_POST["price"], FILTER_SANITIZE_STRING);
-$name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
-//$from = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-$tel = filter_var($_POST["tel"], FILTER_SANITIZE_NUMBER_INT);
-$msg = filter_var($_POST["msg"], FILTER_SANITIZE_STRING);
+$name = filter_var($_POST["review-name"], FILTER_SANITIZE_STRING);
+$from = filter_var($_POST["review-email"], FILTER_SANITIZE_EMAIL);
+$msg = filter_var($_POST["review-msg"], FILTER_SANITIZE_STRING);
 
 
 if (empty($name)) {
@@ -26,11 +22,9 @@ if (!empty($empty)) {
 $br = '<br>';
 $body = 'Имя: ' . $name . $br .
   'Электронная почта: ' . $from . $br .
-  'Тел.: ' . $tel . $br .
   'Сообщение: ' . $msg;
 
 $to = 'admin@mishkas.kl.com.ua';
-$name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
 $subject = 'mishkas.kl.com.ua - новое сообщение от ' . $name;
 
 // $mail = new PHPMailer();
@@ -73,14 +67,10 @@ $mail->IsHTML(true);
 //
 
 if (!$mail->Send()) {
-  $output = json_encode(array('type' => 'error', 'text' => 'Не удалось отправить письмо, пожалуйста, свяжитесь с нами: ' . '<b>' . $to . '<b>'));
+  $output = json_encode(array('type' => 'error', 'text' => 'Не удалось отправить письмо, пожалуйста, напишите : ' . '<b>' . $to . '<b>'));
   die($output);
 } else {
-  $output = json_encode(array('type' => 'done', 'text' => '<div class="buy__success">
-  <h2>' . $name . ', Спасибо за заказ. Вам перезвонят!</h2>
-  <p>Если Вам не перезвонили, свяжитесь с нами: <br> +38 (050) 555-55-55</p>
-</div>
-'));
+  $output = json_encode(array('type' => 'done', 'text' => '<div class="review__success"><b>' . $name . ', спасибо за отзыв!</b><p>После модерации он появится.</p></div>'));
   die($output);
 }
 ?>
