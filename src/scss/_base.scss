@@ -42,7 +42,8 @@ li {
   padding: 0;
 }
 
-.btn {
+.btn,
+a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
   display: inline-block;
   text-decoration: none;
   height: 52px;

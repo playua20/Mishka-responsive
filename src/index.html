@@ -65,7 +65,9 @@
     </div>
   </div>
 </header>
+
 <main>
+
   <section class="s-hero">
     <div class="hero  container">
       <div class="hero__inner  row">
@@ -120,15 +122,15 @@
               </tr>
               <tr class="paremeter__row  paremeter__height">
                 <td class="paremeter__col  paremeter__height">Высота:</td>
-                <td class="paremeter__col  paremeter__height-value">40 см</td>
+                <td class="paremeter__col  paremeter__height-value">50/40/30 см</td>
               </tr>
               <tr class="paremeter__row">
                 <td class="paremeter__col">Длинна:</td>
-                <td class="paremeter__col">22 см</td>
+                <td class="paremeter__col">30/24/18 см</td>
               </tr>
               <tr class="paremeter__row">
                 <td class="paremeter__col">Ширина:</td>
-                <td class="paremeter__col">16 см</td>
+                <td class="paremeter__col">20/16/12 см</td>
               </tr>
             </table>
           </div>
@@ -172,11 +174,11 @@
               </tr>
               <tr class="paremeter__row">
                 <td class="paremeter__col">Диаметр:</td>
-                <td class="paremeter__col">25 см</td>
+                <td class="paremeter__col">36/24/16 см</td>
               </tr>
               <tr class="paremeter__row">
                 <td class="paremeter__col">Высота:</td>
-                <td class="paremeter__col">15 см</td>
+                <td class="paremeter__col">21/14/9 см</td>
               </tr>
             </table>
           </div>
@@ -232,15 +234,15 @@
         <div class="title  reviews__title  col-12  col-md-6  offset-lg-2">
           <h2>Отзывы:</h2>
         </div>
-        <button class="btn  reviews__btn  col-md-3  col-lg-2  ml-md-auto  align-self-center  order-12  order-md-0">
-          Написать отзыв
-        </button>
+        <a class="btn  reviews__btn  col-md-3  col-lg-2  ml-md-auto  align-self-center  order-12  order-md-0">
+          Написать
+        </a>
         <ul class="reviews__slider  col-12  bxslider">
           <li class="reviews__item  col-12  col-lg-8  offset-lg-2">
             <p>Я молодая мама, но все равно фотографии не набирали и близко такого количества лайков, как у популярных
               инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке и мои фотографии сразу стали более
               стильнее, а также набирают больше лайков!</p>
-            <b class="review__auth">
+            <b class="reviews__auth">
               Анастасия Красильникова
             </b>
           </li>
@@ -274,7 +276,7 @@
           <div class="contacts__mail col-12 col-md-6 col-lg-12 row">
             <div class="contacts__col-left col-3"><span>e-mail:</span></div>
             <div class="contacts__col-right col-9">
-              admin@mishkas.kl.com.ua
+              infomishka@gmail.com
             </div>
           </div>
           <div class="contacts__address col-12 col-md-6 col-lg-12 row">
@@ -292,13 +294,14 @@
       <div class="contacts__map col-12 col-lg-6">
         <div id="map"></div>
       </div>
-      <button class="btn  contacts__btn  col-md-5 col-lg-3 offset-lg-2  mr-lg-auto">
+      <a class="btn  contacts__btn  col-md-5 col-lg-3 offset-lg-2  mr-lg-auto">
         Напишите нам
-      </button>
+      </a>
     </div>
   </section>
 
 </main>
+
 <footer id="footer">
   <div class="footer__cont  container">
     <div class="footer__inner  row">
@@ -315,7 +318,7 @@
       </div>
       <div class="footer__copyright col-12 col-md-4">
         <p>
-          <a href="https://github.com/playua18/">
+          <a href="https://github.com/playua18/"  title="мой github">
             <svg id="github">
               <use xlink:href="img/symbol/sprite.svg#github"></use>
             </svg>
@@ -326,20 +329,20 @@
     </div>
   </div>
 </footer>
-<div class="buy-modal  modals">
+<div class="buy-modal  mymodal">
   <b>Свяжитесь с нами:</b><br><br>
   <p>+38 (050) 555-55-55</p>
   <p>+38 (063) 666-66-66</p>
   <!--<a class="buy-btn  btn">Ok</a>-->
   <input type="button" class="buy-btn  btn" value="Ok">
 </div>
-<div class="review-modal  modals">
-  <form id="review-form" action="" method="post">
-    <input name="review-name" type="text" class="review__name" placeholder="Кира Гоцман">
-    <input name="review-email" type="email" class="review__email" placeholder="kira@gmail.com">
-    <textarea name="review-msg" class="review__msg" placeholder="Ваш отзыв..." cols="4"></textarea>
-    <button class="review__btn btn" type="submit">Подтвердить заказ</button>
-    <div class="review-preloader  preloader">
+<div class="reviews-modal  mymodal">
+  <form id="reviews-form" method="post">
+    <input name="reviews-name" type="text" class="review__name" placeholder="Кира Гоцман">
+    <input name="reviews-email" type="email" class="review__email" placeholder="kira@gmail.com">
+    <textarea name="reviews-msg" class="review__msg" placeholder="Ваш отзыв..." cols="4"></textarea>
+    <button class="reviews-btn__success btn" type="submit">Отправить</button>
+    <div class="reviews-preloader  preloader">
       <div id="fountainTextG">
         <div id="fountainTextG_1" class="fountainTextG">З</div>
         <div id="fountainTextG_2" class="fountainTextG">а</div>
@@ -351,7 +354,8 @@
         <div id="fountainTextG_8" class="fountainTextG">а</div>
       </div>
     </div>
-    <button class="review__close btn" type="button" title="Отменить">Отменить</button>
+    <div class="reviews-status"></div>
+    <a class="reviews-btn__close btn" type="button" title="Отменить">Отменить</a>
   </form>
 </div>
 <div id="modal-overlay"></div>

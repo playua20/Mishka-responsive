@@ -75,7 +75,6 @@ $body = 'Имя: ' . $name . $br .
   'Сообщение: ' . $msg;
 
 $to = 'admin@mishkas.kl.com.ua';
-$name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
 $subject = 'mishkas.kl.com.ua - новое сообщение от ' . $name;
 
 // $mail = new PHPMailer();

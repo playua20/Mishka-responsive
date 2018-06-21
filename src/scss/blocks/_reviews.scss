@@ -2,6 +2,25 @@
   box-shadow: none;
   margin-top: -120px;
   border: none;
+
+  .bx-pager.bx-default-pager a {
+    height: 14px;
+    width: 14px;
+    background: rgba(#62d1ba, .5);
+    border-radius: 50%;
+    &:hover,
+    &:focus:hover {
+      background: #62d1ba;
+    }
+    &:focus {
+      background: rgba(#62d1ba, .5);
+    }
+    &.bx-pager-link.active {
+      background: rgba(#62d1ba, .5);
+      box-shadow: 0 0 0 3px #62d1ba;
+    }
+  }
+
 }
 
 .reviews__container {
@@ -49,11 +68,19 @@
 
 .reviews__item {
   width: auto !important;
+  height: 384px;
   padding-top: 180px;
   padding-bottom: 100px;
   &:hover p {
     overflow: visible;
   }
+}
+
+.reviews__auth {
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+  font-weight: bold;
 }
 
 .reviews__more {
@@ -186,6 +213,14 @@
 
   .bx-wrapper {
     min-height: 457px;
+    .bx-pager {
+      bottom: 0;
+    }
+  }
+
+  .reviews__auth {
+    left: 50px;
+    bottom: 80px;
   }
 
   .bx-wrapper .bx-controls-direction a {
@@ -239,4 +274,12 @@
   }
 
   // tablet only end
+}
+
+// desktop start
+@media (min-width: 1200px) {
+  .reviews__auth {
+    left: 15px;
+  }
+// desktop end
 }

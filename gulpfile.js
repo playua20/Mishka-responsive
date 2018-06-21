@@ -78,7 +78,9 @@ gulp.task('browser-sync', function () {
 
 gulp.task('js', function () {
   return gulp.src([
-    'src/js/main.js'
+    'src/js/*.js',
+    '!src/js/libs.min.js',
+    '!src/js/main.min.js'
   ])
     .pipe(plumber({
       errorHandler: notify.onError(function (error) {
@@ -88,8 +90,9 @@ gulp.task('js', function () {
         }
       })
     }))
+    .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
+    // .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('src/js'))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -170,7 +173,8 @@ gulp.task('sprite', (cb)=> {
   cb();
 });
 
-gulp.task('watch', ['clear', 'browser-sync', 'css-libs', 'css', 'js-libs', 'js'], function () {
+gulp.task('watch', function (watch) {
+  run('clear', 'browser-sync', 'css-libs', 'css', 'js-libs', 'js', watch);
   gulp.watch('src/scss/**/*.scss', ['css']).on('change', browserSync.reload);
   gulp.watch('src/*.html', browserSync.reload);
   gulp.watch('src/js/*.js', ['js']).on('change', browserSync.reload);
@@ -180,8 +184,8 @@ gulp.task('watch', ['clear', 'browser-sync', 'css-libs', 'css', 'js-libs', 'js']
 
 // gulp.task('build', ['clean', 'clear', 'css', 'css-libs', 'js-libs', 'js', 'svg', 'img'], function () {
 
-gulp.task('build', function (fn) {
-  run('clean', 'clear', 'css-libs', 'css', 'js-libs', 'js', 'svg', 'img', fn);
+gulp.task('build', function (build) {
+  run('clean', 'clear', 'css-libs', 'css', 'js-libs', 'js', 'svg', 'img', build);
 
   const buildCss = gulp.src([ // Переносим CSS в продакшн
     'src/css/*.css',

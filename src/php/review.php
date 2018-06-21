@@ -3,9 +3,9 @@ require('keys.php');
 require('phpmailer/src/PHPMailer.php');
 require('phpmailer/src/SMTP.php');
 
-$name = filter_var($_POST["review-name"], FILTER_SANITIZE_STRING);
-$from = filter_var($_POST["review-email"], FILTER_SANITIZE_EMAIL);
-$msg = filter_var($_POST["review-msg"], FILTER_SANITIZE_STRING);
+$name = filter_var($_POST["reviews-name"], FILTER_SANITIZE_STRING);
+$from = filter_var($_POST["reviews-email"], FILTER_SANITIZE_EMAIL);
+$msg = filter_var($_POST["reviews-msg"], FILTER_SANITIZE_STRING);
 
 
 if (empty($name)) {
@@ -24,8 +24,8 @@ $body = 'Имя: ' . $name . $br .
   'Электронная почта: ' . $from . $br .
   'Сообщение: ' . $msg;
 
-$to = 'admin@mishkas.kl.com.ua';
-$subject = 'mishkas.kl.com.ua - новое сообщение от ' . $name;
+$to = 'admin@sedona.kl.com.ua';
+$subject = 'mishka.kl.com.ua - новое сообщение от ' . $name;
 
 // $mail = new PHPMailer();
 $mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -35,13 +35,13 @@ $mail->SMTPDebug = 0;
 $mail->SMTPAuth = TRUE;
 $mail->SMTPSecure = "tls";
 $mail->Port = 587;
-$mail->Username = "admin@mishkas.kl.com.ua";
+$mail->Username = "admin@sedona.kl.com.ua";
 $mail->Password = "Dk086818";
 $mail->Host = "mail.zzz.com.ua";
 $mail->Mailer = "smtp";
 $mail->SetFrom($to, $name);
-// $mail->AddReplyTo($_POST["admin@mishkas.kl.com.ua"], $_POST["admin@mishkas.kl.com.ua"]);
-$mail->AddAddress("admin@mishkas.kl.com.ua");
+// $mail->AddReplyTo($_POST["admin@sedona.kl.com.ua"], $_POST["admin@sedona.kl.com.ua"]);
+$mail->AddAddress("admin@sedona.kl.com.ua");
 //$mail->Subject = $_POST["subject"];
 //$mail->WordWrap   = 80;
 //$mail->MsgHTML($_POST["msg"]);
@@ -67,7 +67,7 @@ $mail->IsHTML(true);
 //
 
 if (!$mail->Send()) {
-  $output = json_encode(array('type' => 'error', 'text' => 'Не удалось отправить письмо, пожалуйста, напишите : ' . '<b>' . $to . '<b>'));
+  $output = json_encode(array('type' => 'error', 'text' => 'Не удалось отправить письмо, пожалуйста, напишите: ' . '<b>' . $to . '<b>'));
   die($output);
 } else {
   $output = json_encode(array('type' => 'done', 'text' => '<div class="review__success"><b>' . $name . ', спасибо за отзыв!</b><p>После модерации он появится.</p></div>'));
