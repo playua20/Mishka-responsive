@@ -1,7 +1,7 @@
 .mymodal {
-  //display: none;
+  display: none;
   position: fixed;
-  max-width: 100%;
+  max-width: 500px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -10,7 +10,11 @@
   box-shadow: 0 0 25px rgba(#ccc, .35);
   border: 3px double rgba(#f9f, .35);
   z-index: 9999;
+  .mymodal__inner {
+    width: auto;
+  }
 }
+
 #modal-overlay {
   display: none;
   position: absolute;
@@ -21,12 +25,20 @@
   z-index: 998;
   background: rgba(#f9f, .15);
 }
+
 .preloader {
   display: none;
 }
 
+.btn-wrap .btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .buy-modal {
-  display: none;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
   .buy-btn {
     margin-top: 30px;
     display: block;
@@ -36,23 +48,92 @@
     margin: 0;
   }
 }
-.reviews-modal {
+
+.reviews-status,
+.contacts-status {
   display: none;
-}
-.reviews-status {
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 0 #2e2e2e;
+  text-transform: uppercase;
   padding: .75rem 1.25rem;
   margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: .25rem;
 }
 
-.reviews-status--success {
+.reviews__name,
+.reviews__email,
+.reviews__msg,
+.contacts__name,
+.contacts__email,
+.contacts__msg {
+  margin-bottom: 10px;
+}
+
+.reviews__email,
+.contacts__email {
+  margin-left: auto;
+}
+.contacts__msg,
+.reviews__msg {
+  margin-bottom: 20px;
+}
+.contacts__msg,
+.reviews__msg {
+  margin-bottom: 20px;
+}
+
+.btn-wrap {
+  display: flex;
+  .reviews-btn__close {
+    margin-left: auto;
+  }
+}
+
+.reviews-status--error,
+.contacts-status--error {
+  background-color: rgba(#FF8AD4, .5);
+  border-color: rgba(#FF8AD4, .75);
+  color: #FF8AD4;
+}
+
+.reviews-status--success,
+.contacts-status--success {
   background-color: rgba(#62D1BA, .5);
   border-color: rgba(#62D1BA, .75);
   color: #62D1BA;
 }
-.reviews-status--error {
-  background-color: rgba(#FF8AD4, .5);
-  border-color: rgba(#FF8AD4, .75);
-  color: #FF8AD4;
+
+.btn-wrap .btn {
+  width: 100%;
+}
+
+// mobile only start
+@media (max-width: 767px) {
+  .mymodal {
+    padding: 20px 42px;
+  }
+  .reviews-btn__close,
+  .contacts-btn__close {
+    margin-top: 10px;
+  }
+  .buy-modal {
+    width: 100%;
+  }
+
+// mobile only end
+}
+
+// tablet start
+@media (min-width: 768px) {
+
+  .reviews__name,
+  .reviews__email,
+  .reviews__msg,
+  .contacts__name,
+  .contacts__email,
+  .contacts__msg {
+    margin-bottom: 15px;
+  }
+
+  // tablet end
 }

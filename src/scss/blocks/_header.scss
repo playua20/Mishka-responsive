@@ -1,19 +1,4 @@
-#header {
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    background: #e7e7e7;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
-.header__inner {
+.s-header__nav {
   @include mw();
   position: relative;
 }
@@ -57,6 +42,7 @@
     margin: auto;
     &:hover {
       opacity: .5;
+      transition: .25s;
     }
     &:active {
       opacity: .25;
@@ -78,6 +64,7 @@
 
   &:hover {
     filter: opacity(.5);
+    transition: .25s;
   }
   &:active {
     filter: opacity(.25);
@@ -103,7 +90,7 @@
     left: 0;
     right: 0;
   }
-  .nav__item a{
+  .nav__item a {
     padding-top: 30px;
     padding-bottom: 30px;
   }
@@ -132,6 +119,19 @@
 
 // tablet start
 @media (min-width: 768px) {
+  #header {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 22;
+      height: 24px;
+      background: url('/img/zigzag-fill-tab.png') 50% 0 repeat-x;
+    }
+  }
 
   .nav__item:first-child::after,
   .nav__item:last-child::after {
@@ -185,6 +185,10 @@
 
 // desktop start
 @media (min-width: 1200px) {
+  #header::after {
+    height: 34px;
+    background: url('/img/zigzag-fill-desktop.png') 50% 0 repeat-x;
+  }
   .nav__item-logo img {
     width: 149px;
   }

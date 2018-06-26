@@ -65,7 +65,7 @@ $(function () {
 });
 
 $(function () {
-  $('.test-popup-link').magnificPopup({
+  $('.product__img-link').magnificPopup({
     type: 'image'
     // other options
   });

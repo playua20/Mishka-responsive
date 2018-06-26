@@ -5,7 +5,7 @@
 //       $(".buy-status").hide();
 //       $('.buy-preloader').show();
 //       $.ajax({
-//         url: "php/review.php",
+//         url: "php/reviews.php",
 //         type: "POST",
 //         dataType: 'json',
 //         cache: false,

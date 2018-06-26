@@ -9,38 +9,48 @@
   box-shadow: inset 0 0 5px #000;
 }
 
-.product {
-  @include cf();
+.ui-button.ui-state-active:hover, .ui-button:active, .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active {
+  border: none;
+  background: none;
+}
+
+.ui-widget-content {
+  border: none !important;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  border-bottom: none;
+}
+
+.ui-tabs .ui-tabs-nav li {
+  border: none;
+  background: none;
+}
+
+.s-product {
   position: relative;
   &::after {
     display: block;
     content: '';
     position: absolute;
-    z-index: 2;
-    bottom: 0;
     left: 0;
     right: 0;
-    height: 17px;
-    background: url('/img/zigzag-line-mob.png') 50% 0 repeat-x;
     z-index: 2;
   }
+  &::after {
+    height: 17px;
+    bottom: 0;
+    background: url('/img/zigzag-line-mob.png') 50% 0 repeat-x;
+  }
+}
+
+.product {
+  @include cf();
+  //margin-top: -140px;
   &__list {
-    position: relative;
     background: none;
     border: none;
     outline: none;
-    &::after {
-      display: block;
-      content: '';
-      position: absolute;
-      z-index: 2;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 17px;
-      background: url('/img/zigzag-fill-desktop.png') 50% 0 repeat-x;
-      z-index: 2;
-    }
   }
 }
 
@@ -50,14 +60,7 @@
 
 .interior,
 .toys {
-  margin: 0 !important;
-  &:hover {
-    a {
-      min-height: 146px;
-      margin-top: -10px;
-      transition: .2s;
-    }
-  }
+  border: none;
   &:active p {
     color: rgba(#fff, .5);
   }
@@ -67,7 +70,7 @@
 .toys a {
   width: 100%;
   position: relative;
-  min-height: 136px;
+  height: 136px;
   color: #fff !important;
   font-size: 20px;
   font-weight: bold;
@@ -76,30 +79,41 @@
   &:after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 60px;
     right: 30px;
     transform: translateY(-50%);
+  }
+  p {
+    text-shadow: -1px -1px rgba(#3e3e3e, .3);
+  }
+}
+
+.interior a,
+.toys a {
+  border-radius: 3px;
+  box-shadow: inset 1px 1px 1px #ccc;
+  background: linear-gradient(170deg, rgba(98, 209, 186, .8) 0%, rgba(103, 219, 196, .8) 16%, rgba(90, 191, 171, .8) 36%, rgba(98, 209, 186, .8) 63%, rgba(86, 184, 164, .8) 100%);
+  &:hover {
+    filter: brightness(110%);
+    filter: light(10%);
   }
 }
 
 .interior a {
-  border-radius: 3px;
-  background: #56c3b2;
   &:after {
     @include sprite($interior);
   }
 }
 
 .toys a {
-  border-radius: 3px;
-  background: #56c3b2;
   &:after {
     @include sprite($toy);
   }
 }
 
 .ui-tabs-active a {
-  background: #63d1bb;
+  //background: #63d1bb;
+  filter: brightness(110%);
 }
 
 .paremeter__row {
@@ -191,7 +205,7 @@
   .product__tab {
     padding-left: 15px !important;
     padding-right: 15px !important;
-    padding-bottom: 35px !important;
+    padding-bottom: 45px !important;
     .product__header {
       margin-left: -10px;
       margin-right: -10px;
@@ -220,21 +234,39 @@
 
 // tablet start
 @media (min-width: 768px) {
-  .product::after {
-    height: 23px;
-    background: url('/img/zigzag-line-desktop.png') 50% 0 repeat-x;
+  .s-product {
+    &::after {
+      height: 23px;
+      background: url('/img/zigzag-line-desktop.png') 50% 0 repeat-x;
+    }
   }
   .product__tab {
-    padding-bottom: 50px !important;
+    padding-bottom: 70px !important;
   }
   .product__header {
     text-align: left;
   }
-  .product__list {
+  .product__list.ui-tabs-nav {
     margin-bottom: 50px !important;
+    margin-top: -8px;
+  }
+  .interior,
+  .toys {
+    margin: 0 !important;
+    position: relative;
+    &:hover {
+      a {
+        position: absolute;
+        top: -10px;
+        min-height: 146px;
+        margin-top: -146px;
+        transition: margin-top .3s ease;
+      }
+    }
   }
   .interior a,
   .toys a {
+    margin-top: -144px;
     padding: 35px;
   }
   .product__promo {
@@ -247,7 +279,7 @@
     margin-bottom: 155px;
   }
   .product__order {
-    margin-top: -112px;
+    margin-top: -103px;
   }
   .product__price-wrap {
     font-size: 18px;
@@ -268,9 +300,10 @@
 // desktop start
 @media (min-width: 1200px) {
   .product__tab {
-    padding-bottom: 70px !important;
+    padding-bottom: 90px !important;
   }
   .product__list {
+    padding-top: 0;
     margin-bottom: 70px !important;
   }
   .product__header {

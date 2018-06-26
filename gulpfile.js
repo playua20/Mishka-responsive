@@ -47,7 +47,8 @@ gulp.task('css-libs', function () {
     'src/libs/normalize.css/normalize.css',
     'src/libs/bootstrap/dist/css/bootstrap.css',
     'src/libs/jquery-ui/themes/base/jquery-ui.min.css',
-    'src/libs/jquery-ui/themes/smoothness/jquery-ui.min.css',
+    // 'src/libs/jquery-ui/themes/smoothness/jquery-ui.min.css',
+    // 'src/libs/jquery-ui/themes/cupertino/jquery-ui.min.css',
     'src/libs/css-hamburgers/_sass/hamburgers/hamburgers.scss',
     // 'src/libs/galpop/css/jquery.galpop.css',
     'src/libs/bxslider-4/dist/jquery.bxslider.min.css',
@@ -130,7 +131,7 @@ gulp.task('img', function () {
 });
 
 gulp.task('svg', () => {
-  return gulp.src('src/img/**/*.svg')
+  return gulp.src('src/img/*.svg')
     .pipe(svgmin({
       js2svg: {
         pretty: true
@@ -147,11 +148,11 @@ gulp.task('svg', () => {
     .pipe(replace('&gt;', '>'))
     .pipe(svgSprite({
         mode: {
-          css: { // Activate the «css» mode
-            render: {
-              css: true // Activate CSS output (with default options)
-            }
-          },
+          // css: { // Activate the «css» mode
+          //   render: {
+          //     css: true // Activate CSS output (with default options)
+          //   }
+          // },
           symbol: {
             sprite: 'sprite.svg'
           }
@@ -185,7 +186,7 @@ gulp.task('watch', function (watch) {
 // gulp.task('build', ['clean', 'clear', 'css', 'css-libs', 'js-libs', 'js', 'svg', 'img'], function () {
 
 gulp.task('build', function (build) {
-  run('clean', 'clear', 'css-libs', 'css', 'js-libs', 'js', 'svg', 'img', build);
+  run('clean', 'clear', 'css-libs', 'css', 'js-libs', 'js', 'img', build);
 
   const buildCss = gulp.src([ // Переносим CSS в продакшн
     'src/css/*.css',

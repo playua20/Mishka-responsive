@@ -25,11 +25,6 @@
 
 .reviews__container {
   padding-top: 80px;
-}
-
-.reviews {
-  @include cf();
-  padding-bottom: 50px;
   position: relative;
   &::after {
     display: block;
@@ -43,6 +38,11 @@
     background: url('/img/zigzag-line-mob.png') 50% 0 repeat-x;
     z-index: 2;
   }
+}
+
+.reviews {
+  @include cf();
+  padding-bottom: 50px;
 }
 
 .reviews__title {
@@ -228,7 +228,7 @@
     bottom: 135px;
   }
 
-  .reviews::after {
+  .reviews__container::after {
     height: 23px;
     background: url('/img/zigzag-line-desktop.png') 50% 0 repeat-x;
   }

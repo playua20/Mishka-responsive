@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
 <header id="header">
   <div class="header__inner  container">
     <div class="header__top row">
@@ -135,7 +136,7 @@
             </table>
           </div>
           <div class="product__img  col-12  col-md-6  offset-lg-1">
-            <a class="test-popup-link  product__img-link" href="img/baran/baran-des-red@2x.jpg">
+            <a class="product__img-link" href="img/baran/baran-des-red@2x.jpg">
               <!--<a class="galpop-single product__img-link" href="img/baran/baran-des-pink.jpg">-->
               <picture>
                 <source class="img-des" media="(min-width:1200px)"
@@ -183,7 +184,7 @@
             </table>
           </div>
           <div class="product__img  col-12  col-md-6  offset-md-1">
-            <a class="galpop-single product__img-link" href="img/triple-set-des.jpg">
+            <a class="product__img-link" href="img/triple-set-des.jpg">
               <picture>
                 <source media="(min-width:1200px)"
                         srcset="img/triple-set-des.jpg 1x,
@@ -191,7 +192,7 @@
                 <source media="(min-width:768px)"
                         srcset="img/triple-set-tab.jpg 1x,
                                                   img/triple-set-tab.jpg@2x 2x">
-                <img src="img/triple-set-mob.jpg"
+                <img class="img-mob" src="img/triple-set-mob.jpg"
                      srcset="img/triple-set-mob@2x.jpg 2x"
                      alt="Вязанные корзинки">
               </picture>
@@ -303,7 +304,7 @@
 </main>
 
 <footer id="footer">
-  <div class="footer__cont  container">
+  <div class="footer__cont">
     <div class="footer__inner  row">
       <div class="footer__logo col-12 col-md-4">
         <a class="footer__logo-link" href="/">
@@ -316,15 +317,23 @@
             <a class="social-link  social-link-tw" href=""></a>
           </span>
       </div>
-      <div class="footer__copyright col-12 col-md-4">
+      <div class="footer__dev col-12 col-md-4">
         <p>
-          <a href="https://github.com/playua18/"  title="мой github">
-            <svg id="github">
-              <use xlink:href="img/symbol/sprite.svg#github"></use>
+          <a class="github-logo" href="https://github.com/playua18/" title="мой github">
+            <span>Вёрстка:</span>
+            <svg id="github-logo">
+              <use xlink:href="img/symbol/sprite.svg#github-logo"></use>
             </svg>
           </a>
         </p>
-        <p>Сopyright © 2018</p>
+        <p>
+          <a class="htmlacademy-logo" href="https://htmlacademy.ru/" title="Html Academy">
+            <span>Дизайн:</span>
+            <svg id="htmlacademy-logo">
+              <use xlink:href="img/symbol/sprite.svg#htmlacademy-logo"></use>
+            </svg>
+          </a>
+        </p>
       </div>
     </div>
   </div>
@@ -336,26 +345,50 @@
   <!--<a class="buy-btn  btn">Ok</a>-->
   <input type="button" class="buy-btn  btn" value="Ok">
 </div>
-<div class="reviews-modal  mymodal">
-  <form id="reviews-form" method="post">
-    <input name="reviews-name" type="text" class="review__name" placeholder="Кира Гоцман">
-    <input name="reviews-email" type="email" class="review__email" placeholder="kira@gmail.com">
-    <textarea name="reviews-msg" class="review__msg" placeholder="Ваш отзыв..." cols="4"></textarea>
-    <button class="reviews-btn__success btn" type="submit">Отправить</button>
-    <div class="reviews-preloader  preloader">
-      <div id="fountainTextG">
-        <div id="fountainTextG_1" class="fountainTextG">З</div>
-        <div id="fountainTextG_2" class="fountainTextG">а</div>
-        <div id="fountainTextG_3" class="fountainTextG">г</div>
-        <div id="fountainTextG_4" class="fountainTextG">р</div>
-        <div id="fountainTextG_5" class="fountainTextG">у</div>
-        <div id="fountainTextG_6" class="fountainTextG">з</div>
-        <div id="fountainTextG_7" class="fountainTextG">к</div>
-        <div id="fountainTextG_8" class="fountainTextG">а</div>
+<div class="reviews-modal  mymodal  container">
+  <form id="reviews-form" class="row" method="POST">
+    <input name="reviews-name" type="text" class="reviews__name  col-12  col-md-5" placeholder="Кира">
+    <input name="reviews-email" type="email" class="reviews__email  col-12  col-md-6"
+           placeholder="kirakira@gmail.com">
+    <textarea name="reviews-msg" class="reviews__msg col-12" placeholder="Ваш отзыв..." cols="5"></textarea>
+    <div class="col-12  preloader">
+      <div class="reviews-preloader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-    <div class="reviews-status"></div>
-    <a class="reviews-btn__close btn" type="button" title="Отменить">Отменить</a>
+    <div class="reviews-status  col-12"></div>
+    <div class="btn-wrap  col-12  col-md-6 px-0">
+      <button class="reviews-btn__success  btn" type="submit">Отправить</button>
+    </div>
+    <div class="btn-wrap col-12  col-md-6 px-0">
+      <a class="reviews-btn__close  btn" title="Отменить">Отменить</a>
+    </div>
+  </form>
+</div>
+<div class="contacts-modal  mymodal  container">
+  <form id="contacts-form" class="row" method="POST">
+    <input name="contacts-name" type="text" class="contacts__name  col-12  col-md-5" placeholder="Кира">
+    <input name="contacts-email" type="email" class="contacts__email  col-12  col-md-6"
+           placeholder="kirakira@gmail.com">
+    <textarea name="contacts-msg" class="contacts__msg  col-12" placeholder="Ваш отзыв..." cols="5"></textarea>
+    <div class="col-12  preloader">
+      <div class="contacts-preloader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="contacts-status  col-12"></div>
+    <div class="btn-wrap col-12  col-md-6 px-0">
+      <button class="contacts-btn__success  btn" type="submit">Отправить</button>
+    </div>
+    <div class="btn-wrap col-12  col-md-6 px-0">
+      <a class="contacts-btn__close btn" title="Отменить">Отменить</a>
+    </div>
   </form>
 </div>
 <div id="modal-overlay"></div>

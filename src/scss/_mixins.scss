@@ -14,6 +14,23 @@
 }
 // @include cf();
 
+// минус row padding
+@mixin bcf() {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  // tablet start
+  @media (min-width: 768px) {
+    padding-left: 35px;
+    padding-right: 35px;
+    max-width: 1150px;
+  }
+  // tablet end
+}
+// @include bcf();
+
 @mixin mw() {
   width: auto;
   margin-left: auto;
