@@ -25,7 +25,8 @@
     "galpop": "^1.0.9",
     "bxslider-4": "fafnur-bxslider#^4.2.15",
     "phpmailer": "^6.0.5",
-    "magnific-popup": "^1.1.0"
+    "magnific-popup": "^1.1.0",
+    "video.js": "^7.0.5"
   },
   "devDependencies": {}
 }

@@ -1,0 +1,23 @@
+.target-anime {
+  animation-name: shadowPulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shadowPulse {
+  0% {
+    box-shadow: 0px 0px 10px rgba(#62d1ba, 0);
+    background: rgba(#62d1ba, 0);
+  }
+
+  50% {
+    box-shadow: 0px 0px 15px rgba(#62d1ba, 1);
+    background: rgba(#62d1ba, 1);
+  }
+
+  100% {
+    box-shadow: 0px 0px 10px rgba(#62d1ba, 0);
+    background: rgba(#62d1ba, 0);
+  }
+}

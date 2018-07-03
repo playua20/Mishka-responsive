@@ -1,7 +1,7 @@
 $(function() {
-  $('.product__btn').click(function (e) {
+  $('.product__btn, .icon-phone').click(function (e) {
     e.preventDefault();
-    $('.buy-modal, #modal-overlay').show();
+    $('.buy-modal, #modal-overlay').fadeIn(150);
     $('.buy-btn').focus();
   });
 });
@@ -11,7 +11,7 @@ $(function () {
   // var code = e.keyCode || e.which == 13 || 27 || 32;
 
   function rm() {
-    $('.buy-modal, .reviews-modal, .contacts-modal, #modal-overlay').fadeOut('fast');
+    $('.buy-modal, .reviews-modal, .contacts-modal, #modal-overlay').hide();
   };
 
   $('.buy-btn').bind('keydown || click', function (e) {

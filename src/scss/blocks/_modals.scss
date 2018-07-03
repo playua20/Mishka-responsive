@@ -7,7 +7,7 @@
   transform: translate(-50%, -50%);
   background: #fff;
   padding: 50px;
-  box-shadow: 0 0 25px rgba(#ccc, .35);
+  box-shadow: 3px 1px 15px rgba(#ccc, .5);
   border: 3px double rgba(#f9f, .35);
   z-index: 9999;
   .mymodal__inner {
@@ -46,6 +46,25 @@
   }
   p {
     margin: 0;
+  }
+}
+.call-us {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.buy-modal__phone {
+  position: relative;
+  padding-left: 65px;
+  text-align: left;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: url('/img/call-now-small.gif') no-repeat;
   }
 }
 
@@ -110,7 +129,7 @@
 // mobile only start
 @media (max-width: 767px) {
   .mymodal {
-    padding: 20px 42px;
+    padding: 15px 30px;
   }
   .reviews-btn__close,
   .contacts-btn__close {
@@ -118,6 +137,29 @@
   }
   .buy-modal {
     width: 100%;
+  }
+  .call-us {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .buy-modal__phone {
+    position: relative;
+    padding-top: 60px;
+    padding-left: 0;
+    text-align: center;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background: url('/img/call-now-small.gif') no-repeat;
+    }
+  }
+  .buy-btn.btn {
+    margin-top: 15px;
   }
 
 // mobile only end

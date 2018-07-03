@@ -56,10 +56,23 @@ $(function () {
   $('.paremeter__col input').click(function () {
     if (this.checked) {
       var data = $(this).data('img');
+
+      var webPdes = $(this).parentsUntil('article').find('.webp-des');
+      var webPtab = $(this).parentsUntil('article').find('.webp-tab');
+      var webPmob = $(this).parentsUntil('article').find('.webp-mob');
+
       var des = $(this).parentsUntil('article').find('.img-des');
       var tab = $(this).parentsUntil('article').find('.img-tab');
       var mob = $(this).parentsUntil('article').find('.img-mob');
+
+
       $(this).parentsUntil('article').find('.product__img-link').attr('href', 'img/baran/baran-des' + '-' + data + '.jpg');
+      // $(this).parentsUntil('article').find('.product__img-link').attr('href', 'img/baran/baran-des' + '-' + data + '.webp');
+
+      webPdes.attr('srcset', 'img/baran/baran-des' + '-' + data + '.webp 1x, img/baran/baran-des' + '-' + data + '@2x.webp 2x');
+      webPtab.attr('srcset', 'img/baran/baran-tab' + '-' + data + '.webp 1x, img/baran/baran-des' + '-' + data + '@2x.webp 2x');
+      webPmob.attr('src', 'img/baran/baran-mob' + '-' + data + '.webp').attr('srcset', 'img/baran/baran-mob' + '-' + data + '@2x' + '.webp' + ' ' + '2x');
+
       des.attr('srcset', 'img/baran/baran-des' + '-' + data + '.jpg 1x, img/baran/baran-des' + '-' + data + '@2x.jpg 2x');
       tab.attr('srcset', 'img/baran/baran-tab' + '-' + data + '.jpg 1x, img/baran/baran-des' + '-' + data + '@2x.jpg 2x');
       mob.attr('src', 'img/baran/baran-mob' + '-' + data + '.jpg').attr('srcset', 'img/baran/baran-mob' + '-' + data + '@2x' + '.jpg' + ' ' + '2x');
@@ -131,7 +144,32 @@ $(function () {
     }, 'fast', 'swing', function () {
       window.location.hash = target;
     });
-    $target.delay(100).effect("highlight", {color:"#FF86D2"},1000);
+    // $target.delay(100).effect("highlight", {color:"#FF86D2"},1000);
+    // $target.delay(100).addClass('target-anime').delay(1000).removeClass('target-anime');
+    // $target.addClass('target-anime');
+    // $target.removeClass('target-anime', 1000);
+    // $target.css('background', 'red');
+
+
+
+    (function($){
+
+      $.fn.extend({
+
+        addTemporaryClass: function(className, duration) {
+          var elements = this;
+          setTimeout(function() {
+            elements.removeClass(className);
+          }, duration);
+
+          return this.each(function() {
+            $(this).addClass(className);
+          });
+        }
+      });
+
+    })(jQuery);
+
+    $target.addTemporaryClass("target-anime", 3000);
   });
 });
-

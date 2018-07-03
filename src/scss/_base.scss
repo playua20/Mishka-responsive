@@ -9,21 +9,12 @@ body {
   color: #444;
   font: $ff;
   font-size: 14px;
-}
-// tablet start
-@media (min-width: 768px) {
-  body {
+  @media (min-width: 768px) {
     font-size: 15px;
   }
-
-// tablet end
-}
-// desktop start
-@media (min-width: 1200px) {
-  body {
+  @media (min-width: 1200px) {
     font-size: 16px;
   }
-  // desktop end
 }
 
 * {
@@ -44,12 +35,13 @@ li {
 }
 
 .btn,
-a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
   display: inline-block;
   text-decoration: none;
   height: 52px;
-  font: $ff2;
   font-size: 16px;
+  font: $ff2;
   line-height: 26px;
   text-transform: uppercase;
   font-weight: 700;
@@ -129,15 +121,23 @@ ol {
 // mobile only start
 @media (max-width: 767px) {
 
-  h2 {
-    text-align: left;
-  }
-
   .container {
     max-width: 100%;
   }
 
-// mobile only end
+  .btn,
+  a:not([href]):not([tabindex]):focus,
+  a:not([href]):not([tabindex]):hover {
+    height: 42px;
+    line-height: 20px;
+    padding: 10px 15px;
+  }
+
+  h2 {
+    text-align: left;
+  }
+
+  // mobile only end
 }
 
 // tablet start
@@ -148,7 +148,7 @@ ol {
     line-height: 56px;
     color: #000;
   }
-// tablet end
+  // tablet end
 }
 
 // desktop start
@@ -160,6 +160,6 @@ ol {
     color: #000;
   }
 
-// desktop end
+  // desktop end
 }
 

@@ -1,0 +1,6 @@
+$grid-gutter-width: 0px !default;
+  .no-gutter > [class^="col-"],
+  .no-gutter > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }

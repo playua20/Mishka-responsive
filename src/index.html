@@ -136,15 +136,23 @@
             </table>
           </div>
           <div class="product__img  col-12  col-md-6  offset-lg-1">
-            <a class="product__img-link" href="img/baran/baran-des-red@2x.jpg">
-              <!--<a class="galpop-single product__img-link" href="img/baran/baran-des-pink.jpg">-->
+            <a class="product__img-link" href="img/baran/baran-des-red@2x.webp">
               <picture>
+                <source type="image/webp" class="webp-des" media="(min-width:1200px)"
+                        srcset="img/baran/baran-des-pink.webp 1x,
+                                                          img/baran/baran-des-pink@2x.webp 2x">
+                <source type="image/webp" class="webp-tab" media="(min-width:768px)"
+                        srcset="img/baran/baran-tab-pink.webp 1x,
+                                                          img/baran/baran-tab-pink@2x.webp 2x">
+                <source type="image/webp" class="webp-mob"
+                        srcset="img/baran/baran-mob-pink.webp 1x, img/baran/baran-mob-pink@2x.webp 2x">
+
                 <source class="img-des" media="(min-width:1200px)"
                         srcset="img/baran/baran-des-pink.jpg 1x,
-                                                          img/baran/baran-des-pink.jpg@2x 2x">
+                                                          img/baran/baran-des-pink@2x.jpg 2x">
                 <source class="img-tab" media="(min-width:768px)"
                         srcset="img/baran/baran-tab-pink.jpg 1x,
-                                                          img/baran/baran-tab-pink.jpg@2x 2x">
+                                                          img/baran/baran-tab-pink@2x.jpg 2x">
                 <img class="img-mob" src="img/baran/baran-mob-pink.jpg"
                      srcset="img/baran/baran-mob-pink@2x.jpg 2x"
                      alt="Вязанный баран">
@@ -184,14 +192,23 @@
             </table>
           </div>
           <div class="product__img  col-12  col-md-6  offset-md-1">
-            <a class="product__img-link" href="img/triple-set-des.jpg">
+            <a class="product__img-link" href="img/triple-set-des.webp">
               <picture>
-                <source media="(min-width:1200px)"
+                <source type="image/webp" class="webp-des" media="(min-width:1200px)"
+                        srcset="img/triple-set-des.webp 1x,
+                                                  img/triple-set-des@2x.webp 2x">
+                <source type="image/webp" class="webp-tab" media="(min-width:768px)"
+                        srcset="img/triple-set-tab.webp 1x,
+                                                  img/triple-set-tab@2x.webp 2x">
+                <source type="image/webp" class="webp-mob"
+                        srcset="img/triple-set-mob.webp 1x, img/triple-set-mob@2x.webp 2x">
+
+                <source class="img-des" media="(min-width:1200px)"
                         srcset="img/triple-set-des.jpg 1x,
-                                                  img/triple-set-des.jpg@2x 2x">
-                <source media="(min-width:768px)"
+                                                  img/triple-set-des@2x.jpg 2x">
+                <source class="img-tab" media="(min-width:768px)"
                         srcset="img/triple-set-tab.jpg 1x,
-                                                  img/triple-set-tab.jpg@2x 2x">
+                                                  img/triple-set-tab@2x.jpg 2x">
                 <img class="img-mob" src="img/triple-set-mob.jpg"
                      srcset="img/triple-set-mob@2x.jpg 2x"
                      alt="Вязанные корзинки">
@@ -339,10 +356,11 @@
   </div>
 </footer>
 <div class="buy-modal  mymodal">
-  <b>Свяжитесь с нами:</b><br><br>
-  <p>+38 (050) 555-55-55</p>
-  <p>+38 (063) 666-66-66</p>
-  <!--<a class="buy-btn  btn">Ok</a>-->
+  <b class="call-us">Свяжитесь с нами:</b>
+  <div class="buy-modal__phone">
+    <p>+38 (050) 555-55-55</p>
+    <p>+38 (063) 666-66-66</p>
+  </div>
   <input type="button" class="buy-btn  btn" value="Ok">
 </div>
 <div class="reviews-modal  mymodal  container">

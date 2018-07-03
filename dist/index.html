@@ -17,10 +17,11 @@
   </script>
 </head>
 
-<body>
+<body id="index-body">
 
 <header id="header">
-  <div class="header__inner  container">
+
+  <section class="s-header__nav  container">
     <div class="header__top row">
       <div class="nav__item-logo-mobile  col-12">
         <a href="/">
@@ -45,8 +46,8 @@
                 </picture>
               </a>
             </li>
-            <li class="nav__item  col-12  col-md"><a href="order.html">О нас</a></li>
-            <li class="nav__item  col-12  col-md"><a href="order.html">Контакты</a></li>
+            <li class="nav__item  col-12  col-md"><a href="#about">О нас</a></li>
+            <li class="nav__item  col-12  col-md"><a href="#contacts">Контакты</a></li>
           </ul>
         </div>
       </nav>
@@ -64,20 +65,19 @@
     <div class="header__bot  row">
       <p class="header__bot-share  col">Бесплатная доставка по городу</p>
     </div>
-  </div>
-</header>
-
-<main>
+  </section>
 
   <section class="s-hero">
-    <div class="hero  container">
-      <div class="hero__inner  row">
-        <div class="hero__title  col">
-          <h1>Милые штуки ручной работы для дома</h1>
-        </div>
+    <div class="hero">
+      <div class="hero__title">
+        <h1>Милые штуки ручной работы для дома</h1>
       </div>
     </div>
   </section>
+
+</header>
+
+<main>
 
   <section class="s-product">
     <div id="tabs" class="product container">
@@ -136,15 +136,23 @@
             </table>
           </div>
           <div class="product__img  col-12  col-md-6  offset-lg-1">
-            <a class="product__img-link" href="img/baran/baran-des-red@2x.jpg">
-              <!--<a class="galpop-single product__img-link" href="img/baran/baran-des-pink.jpg">-->
+            <a class="product__img-link" href="img/baran/baran-des-red@2x.webp">
               <picture>
+                <source type="image/webp" class="webp-des" media="(min-width:1200px)"
+                        srcset="img/baran/baran-des-pink.webp 1x,
+                                                          img/baran/baran-des-pink@2x.webp 2x">
+                <source type="image/webp" class="webp-tab" media="(min-width:768px)"
+                        srcset="img/baran/baran-tab-pink.webp 1x,
+                                                          img/baran/baran-tab-pink@2x.webp 2x">
+                <source type="image/webp" class="webp-mob"
+                        srcset="img/baran/baran-mob-pink.webp 1x, img/baran/baran-mob-pink@2x.webp 2x">
+
                 <source class="img-des" media="(min-width:1200px)"
                         srcset="img/baran/baran-des-pink.jpg 1x,
-                                                          img/baran/baran-des-pink.jpg@2x 2x">
+                                                          img/baran/baran-des-pink@2x.jpg 2x">
                 <source class="img-tab" media="(min-width:768px)"
                         srcset="img/baran/baran-tab-pink.jpg 1x,
-                                                          img/baran/baran-tab-pink.jpg@2x 2x">
+                                                          img/baran/baran-tab-pink@2x.jpg 2x">
                 <img class="img-mob" src="img/baran/baran-mob-pink.jpg"
                      srcset="img/baran/baran-mob-pink@2x.jpg 2x"
                      alt="Вязанный баран">
@@ -184,14 +192,23 @@
             </table>
           </div>
           <div class="product__img  col-12  col-md-6  offset-md-1">
-            <a class="product__img-link" href="img/triple-set-des.jpg">
+            <a class="product__img-link" href="img/triple-set-des.webp">
               <picture>
-                <source media="(min-width:1200px)"
+                <source type="image/webp" class="webp-des" media="(min-width:1200px)"
+                        srcset="img/triple-set-des.webp 1x,
+                                                  img/triple-set-des@2x.webp 2x">
+                <source type="image/webp" class="webp-tab" media="(min-width:768px)"
+                        srcset="img/triple-set-tab.webp 1x,
+                                                  img/triple-set-tab@2x.webp 2x">
+                <source type="image/webp" class="webp-mob"
+                        srcset="img/triple-set-mob.webp 1x, img/triple-set-mob@2x.webp 2x">
+
+                <source class="img-des" media="(min-width:1200px)"
                         srcset="img/triple-set-des.jpg 1x,
-                                                  img/triple-set-des.jpg@2x 2x">
-                <source media="(min-width:768px)"
+                                                  img/triple-set-des@2x.jpg 2x">
+                <source class="img-tab" media="(min-width:768px)"
                         srcset="img/triple-set-tab.jpg 1x,
-                                                  img/triple-set-tab.jpg@2x 2x">
+                                                  img/triple-set-tab@2x.jpg 2x">
                 <img class="img-mob" src="img/triple-set-mob.jpg"
                      srcset="img/triple-set-mob@2x.jpg 2x"
                      alt="Вязанные корзинки">
@@ -209,7 +226,7 @@
     </div>
   </section>
 
-  <section class="s-about">
+  <section id="about" class="s-about">
     <div class="about  container">
       <div class="about__title  title  col-lg-10  offset-lg-1">
         <h2 class="">Коротко о нас:</h2>
@@ -267,7 +284,7 @@
     </div>
   </section>
 
-  <section class="s-contacts">
+  <section id="contacts" class="s-contacts">
     <div class="contacts row">
       <div class="contacts__info col-12  col-lg-4 offset-lg-2">
         <div class="title">
@@ -304,7 +321,7 @@
 </main>
 
 <footer id="footer">
-  <div class="footer__cont">
+  <div class="footer__container">
     <div class="footer__inner  row">
       <div class="footer__logo col-12 col-md-4">
         <a class="footer__logo-link" href="/">
@@ -339,10 +356,11 @@
   </div>
 </footer>
 <div class="buy-modal  mymodal">
-  <b>Свяжитесь с нами:</b><br><br>
-  <p>+38 (050) 555-55-55</p>
-  <p>+38 (063) 666-66-66</p>
-  <!--<a class="buy-btn  btn">Ok</a>-->
+  <b class="call-us">Свяжитесь с нами:</b>
+  <div class="buy-modal__phone">
+    <p>+38 (050) 555-55-55</p>
+    <p>+38 (063) 666-66-66</p>
+  </div>
   <input type="button" class="buy-btn  btn" value="Ok">
 </div>
 <div class="reviews-modal  mymodal  container">
