@@ -1,5 +1,5 @@
-$ff: 300 14px "Open Sans", Helvetica, sans-serif;
-$ff2: 700 14px "Verdana", Helvetica, sans-serif;
+$ff: 300 16px "Open Sans", Helvetica, sans-serif;
+$ff2: 700 16px "Verdana", Helvetica, sans-serif;
 $bg: #fff; // accent background
 $bgh: lighten($bg, 10%); // hover
 $bga: darken($bg, 10%); // active
@@ -14,16 +14,21 @@ $btna: darken($inp, 10%); // btn active
 
 // tablet start
 @media (min-width: 768px) {
-  $ff: 300 15px "Open Sans", Helvetica, sans-serif;
-  $ff2: 700 15px "Verdana", Helvetica, sans-serif;
+  $ff: 300 17px "Open Sans", Helvetica, sans-serif;
+  $ff2: 700 17px "Verdana", Helvetica, sans-serif;
 
 // tablet end
 }
 
 // desktop start
 @media (min-width: 1200px) {
-  $ff: 300 16px "Open Sans", Helvetica, sans-serif;
-  $ff2: 700 16px "Verdana", Helvetica, sans-serif;
+  $ff: 300 18px "Open Sans", Helvetica, sans-serif;
+  $ff2: 700 18px "Verdana", Helvetica, sans-serif;
 
 // desktop end
+}
+
+@media (max-width: 767px) {
+  $ff: 300 15px "Open Sans", Helvetica, sans-serif;
+  $ff2: 700 15px "Verdana", Helvetica, sans-serif;
 }

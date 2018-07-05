@@ -63,8 +63,8 @@
         </div>
       </div>
     </div>
-    <div class="header__bot  row">
-      <p class="header__bot-share  col">Бесплатная доставка по городу</p>
+    <div class="header__bot">
+      <p class="header__bot-share">Бесплатная доставка по городу</p>
     </div>
   </section>
 
@@ -100,7 +100,7 @@
         </div>
         <div class="card-item__content">
           <div class="card-item__desk">
-            <p class="card-item__name">Козломордик "Goat female"</p>
+            <h3 class="card-item__name">Козломордик "Goat female"</h3>
             <p class="card-item__parameters">высота 30 см</p>
           </div>
           <div class="card-item__price">
@@ -116,7 +116,7 @@
             <picture>
               <source class="webp-des" type="image/webp" media="(min-width:1200px)" srcset="img/cards/goat-he-des.webp">
               <source class="webp-tab" type="image/webp" media="(min-width:768px)" srcset="img/cards/goat-he-tab.webp">
-              <source class="webp-mob" type="image/webp" srcset="img/cards/goat-child-mob.webp">
+              <source class="webp-mob" type="image/webp" srcset="img/cards/goat-he-mob.webp">
 
               <source class="img-des" media="(min-width:1200px)" srcset="img/cards/goat-he-des.jpg">
               <source class="img-tab" media="(min-width:768px)" srcset="img/cards/goat-he-tab.jpg">
@@ -126,7 +126,7 @@
         </div>
         <div class="card-item__content">
           <div class="card-item__desk">
-            <p class="card-item__name">Козломордик "Goat male"</p>
+            <h3 class="card-item__name">Козломордик "Goat male"</h3>
             <p class="card-item__parameters">высота 30 см</p>
           </div>
           <div class="card-item__price">
@@ -152,7 +152,7 @@
         </div>
         <div class="card-item__content">
           <div class="card-item__desk">
-            <p class="card-item__name">Козломордик "Goat child"</p>
+            <h3 class="card-item__name">Козломордик "Goat child"</h3>
             <p class="card-item__parameters">высота 15 см</p>
           </div>
           <div class="card-item__price">
@@ -172,13 +172,13 @@
 
               <source class="img-des" media="(min-width:1200px)" srcset="img/cards/goats-des.jpg">
               <source class="img-tab" media="(min-width:768px)" srcset="img/cards/goats-tab.jpg">
-              <img src="img/cards/goats-mob.jpg" alt="goats">
+              <img src="img/cards/goat-mob.jpg" alt="goats">
             </picture>
           </a>
         </div>
         <div class="card-item__content">
           <div class="card-item__desk">
-            <p class="card-item__name">Козломордик "Goat couple"</p>
+            <h3 class="card-item__name">Козломордик "Goat couple"</h3>
             <p class="card-item__parameters">высота 30 см</p>
           </div>
           <div class="card-item__bonus">
@@ -207,7 +207,7 @@
         </div>
         <div class="card-item__content">
           <div class="card-item__desk">
-            <p class="card-item__name">Зайчик-попрыгайчик</p>
+            <h3 class="card-item__name">Зайчик-попрыгайчик</h3>
             <p class="card-item__parameters">Рост 30 см, вес 200 г</p>
           </div>
           <div class="card-item__price">
@@ -233,7 +233,7 @@
         </div>
         <div class="card-item__content">
           <div class="card-item__desk">
-            <p class="card-item__name">Корзинка для белья</p>
+            <h3 class="card-item__name">Корзинка для белья</h3>
             <p class="card-item__parameters">Диаметр 15 см, высота 10 см</p>
           </div>
           <div class="card-item__price">
@@ -259,7 +259,7 @@
         </div>
         <div class="card-item__content">
           <div class="card-item__desk">
-            <p class="card-item__name">Большая корзинка для игрушек</p>
+            <h3 class="card-item__name">Большая корзинка для игрушек</h3>
             <p class="card-item__parameters">Диаметр 30 см, высота 30 см</p>
           </div>
           <div class="card-item__price">
@@ -274,20 +274,26 @@
   </section>
 
   <section class="s-video">
-    <div class="video__container">
-      <!-- <video id="my-video" class="video-js  vjs-default-skin" controls preload="auto"
-             poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
-        <source src="video/knit-toys.mp4" type='video/mp4'>
-        <source src="MY_VIDEO.webm" type='video/webm'>
-      </video> -->
 
-        <video id="my_video" class="video-js vjs-default-skin" width="" height=""
-               controls preload="none" poster='http://video-js.zencoder.com/oceans-clip.jpg'
-               data-setup='{ "aspectRatio":"640:360", "playbackRates": [1, 1.5, 2] }'>
-          <source src="video/knit-toys.mp4" type='video/mp4' />
-          &lt;!&ndash;<source src="https://vjs.zencdn.net/v/oceans.webm" type='video/webm' />&ndash;&gt;
+    <div class="video__container">
+      <h3 class="video__name  video__name--top">Процесс <br> производства</h3>
+
+      <div class="video__media-wrap">
+        <video id="my-video" class="video-js vjs-default-skin"
+               controls preload="none" poster='video/video.jpg'
+               data-setup='{ "aspectRatio":"1280:800", "playbackRates": [1, 1.5, 2] }'>
+          <source src="video/knit-toys.mp4" type='video/mp4'/>
+          <!--<source src="video/knit-toys.mp4" type='video/webm'/>-->
         </video>
+      </div>
+      <div class="video__desk">
+        <h3 class="video__name  video__name--bot">Процесс <br> производства</h3>
+        <p class="video__info">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как
+          появляются наши товары.</p>
+        <button class="btn  video__btn">Сделать заказ</button>
+      </div>
     </div>
+
   </section>
 
 </main>

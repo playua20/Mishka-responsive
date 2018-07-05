@@ -18,6 +18,7 @@
 
 .card-item__content {
   flex-grow: 1;
+  flex-shrink: 1;
   padding: 0 30px;
   border: 1px solid #ececec;
 }
@@ -70,6 +71,17 @@
 .card-item__img {
   text-align: center;
   background-color: #bcbdbf;
+}
+
+// extra small start
+@media (max-width: 400px) {
+
+  .catalog {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // extra small end
 }
 
 // mobile only start

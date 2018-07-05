@@ -1,48 +1,3 @@
-.video__container {
-  @include cf();
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-#my-video {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 683px;
-  height: 455px;
-}
-
-.vjs-big-play-button {
-  height: 77px !important;
-  width: 101px !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  // background: url('../img/icons/play.png') !important;
-  border: none !important;
-  outline: none !important;
-  // @include sprite($play);
-  transition: .25s !important;
-  &:hover {
-    zoom: 1.2 !important;
-    filter: brightness(110%);
-  }
-  &:active {
-    opacity: .7 !important;
-  }
-}
-
-.video-js .vjs-control-bar {
-  display: flex;
-}
-
-.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
-.vjs-icon-play:before {
-    content: "" !important;
-  @include sprite($play);
-}
-
-
 .video-js .vjs-play-control .vjs-icon-placeholder:before {
   // @include sprite($play);
   // zoom: 0.4 !important;
@@ -173,19 +128,202 @@ $slider-bg-color: lighten($primary-background-color, 33%);
   background: rgba($slider-bg-color, 0.75);
 }
 
-.video-js .vjs-control-bar {
+.video__container {
+  @include cf();
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.video__media-wrap {
+  width: 65%;
+}
+
+.vjs-control-bar {
+  //background-color: #FF86D2 !important;
+  color: #62d1ba;
+}
+
+.js-remaining-time {
+  order: 1;
+}
+
+.vjs-volume-panel {
+  order: 2;
+}
+
+.vjs-playback-rate,
+.vjs-fullscreen-control {
+  order: 3;
+}
+
+.vjs-big-play-button {
+  height: 77px !important;
+  width: 101px !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  // background: url('../img/icons/play.png') !important;
+  border: none !important;
+  outline: none !important;
+  // @include sprite($play);
+  transition: .25s !important;
+  background-color: transparent !important;
+  &:hover {
+    zoom: 1.2 !important;
+    filter: brightness(110%);
+  }
+  &:active {
+    opacity: .7 !important;
+  }
+}
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
+.vjs-icon-play:before {
+  content: "" !important;
+  @include sprite($play);
+}
+
+.video__container {
   display: flex;
+  flex-direction: column;
+}
+
+.video__media-wrap {
+  width: 100%;
+}
+
+.video__desk {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid #ececec;
+  padding: 30px;
+}
+
+.video__info {
+  padding-bottom: 25px;
+}
+
+.video__name {
+  position: relative;
+  font: $ff2;
+  padding-left: 70px;
+  margin-bottom: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include sprite($video);
+  }
+}
+
+.video__name--top {
+  display: none;
+}
+
+.video__btn {
+  margin-top: auto;
+}
+
+// extra small start
+@media (max-width: 400px) {
+
+  .video__container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+// extra small end
 }
 
 // mobile only start
 @media (max-width: 767px) {
 
-  .video__container {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 0;
-    padding-right: 0;
+  .video__desk {
+    border-top: none;
   }
 
-  // mobile only end
+  .video__name--top {
+    display: block;
+  }
+
+  .video__name--bot {
+    display: none;
+  }
+
+// mobile only end
+}
+
+// tablet start
+@media (min-width: 768px) {
+
+  .video__container {
+    padding-top: 35px;
+    padding-bottom: 45px;
+  }
+
+  .video__desk {
+    padding: 40px;
+  }
+
+  .video__name--top,
+  .video__name,
+  .video__info {
+    margin-bottom: 30px;
+  }
+
+  .video__name {
+    font-size: 18px;
+  }
+
+  // tablet end
+}
+
+// tablet only start
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .video__desk {
+    border-top: none;
+  }
+
+  .video__name br {
+    display: none;
+  }
+
+// tablet only end
+}
+
+// desktop start
+@media (min-width: 1200px) {
+
+  .video__container {
+    flex-direction: row;
+    padding-top: 50px;
+    padding-bottom: 75px;
+  }
+
+  .video__media-wrap {
+    width: 65%;
+  }
+
+  .video__desk {
+    width: 35%;
+    padding: 45px 45px 60px 80px;
+    border-left: none;
+  }
+
+  .video__name {
+    padding-top: 50px;
+    padding-left: 0;
+    &::before {
+      left: 0;
+      top: 0;
+      @include sprite($video);
+    }
+  }
+
+// desktop end
 }

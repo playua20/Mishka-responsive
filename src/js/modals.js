@@ -1,5 +1,5 @@
 $(function() {
-  $('.product__btn, .icon-phone').click(function (e) {
+  $('.product__btn, .icon-phone, .video__btn').click(function (e) {
     e.preventDefault();
     $('.buy-modal, #modal-overlay').fadeIn(150);
     $('.buy-btn').focus();

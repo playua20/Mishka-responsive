@@ -58,7 +58,7 @@ function img() {
 
 function css() {
   return gulp.src('./src/scss/style.scss')
-  // .pipe(changed('src/css'))
+  // .pipe(changed('./dist/css/style.css'))
     .pipe(plumber({
       errorHandler: notify.onError(function (error) {
         return {
@@ -68,7 +68,6 @@ function css() {
       })
     }))
     .pipe(sass())
-    // .pipe(autoprefixer(['last 10 versions', '> 1%'], {cascade: true}))
     .pipe(rename('style.css'))
     .pipe(gulp.dest('./dist/css'))
     .pipe(postcss([autoprefixer(), csso()]))
@@ -76,7 +75,7 @@ function css() {
     .pipe(gulp.dest('./dist/css'))
     .pipe(browsersync.stream());
   // .pipe(browserSync.reload({stream: true}));
-  // .pipe(browserSync.stream({match: '**/*.css'}));
+  // .pipe(browserSync.stream({match: './dist/css/*.css'}));
 }
 
 function cssLibs() {
@@ -131,7 +130,7 @@ function jsLibs() {
     'src/libs/bxslider-4/dist/jquery.bxslider.min.js',
     'src/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
     'node_modules/video.js/dist/video.min.js',
-    // 'node_modules/video.js/dist/lang/ru.js',
+    // 'node_modules/my-video.js/dist/lang/ru.js',
     // 'src/libs/jssocials/dist/jssocials.js',
   ])
     .pipe(concat('libs.min.js'))
@@ -141,7 +140,7 @@ function jsLibs() {
 
 function html() {
   return gulp.src('./src/*.html')
-    // .pipe(posthtml())
+  // .pipe(posthtml())
     .pipe(gulp.dest('./dist/'))
     .pipe(browsersync.stream());
 }
@@ -171,10 +170,11 @@ gulp.task("php", php);
 gulp.task("webP", webP);
 gulp.task("svg", svg);
 gulp.task("sprite", sprite);
+gulp.task("video", video);
 
 gulp.task(
   "build",
-  gulp.series(clean, clear, gulp.parallel(html, css, cssLibs, js, jsLibs, webP, svg, img, php))
+  gulp.series(clean, clear, gulp.parallel(html, css, cssLibs, js, jsLibs, webP, svg, img, php, video))
 );
 
 gulp.task("watch", gulp.parallel(watchFiles, browserSync));
@@ -227,4 +227,9 @@ function sprite() {
 
   spriteData.img.pipe(gulp.dest('./dist/img'));
   spriteData.css.pipe(gulp.dest('./src/scss'));
+}
+
+function video() {
+  return gulp.src('./src/video/*')
+    .pipe(gulp.dest('./dist/'))
 }

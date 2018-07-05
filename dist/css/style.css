@@ -6,7 +6,7 @@ html, body {
 body {
   position: relative;
   color: #444;
-  font: 300 14px "Open Sans", Helvetica, sans-serif;
+  font: 300 16px "Open Sans", Helvetica, sans-serif;
   font-size: 14px; }
   @media (min-width: 768px) {
     body {
@@ -36,7 +36,7 @@ a:not([href]):not([tabindex]):hover {
   text-decoration: none;
   height: 52px;
   font-size: 16px;
-  font: 700 14px "Verdana", Helvetica, sans-serif;
+  font: 700 16px "Verdana", Helvetica, sans-serif;
   line-height: 26px;
   text-transform: uppercase;
   font-weight: 700;
@@ -50,7 +50,8 @@ a:not([href]):not([tabindex]):hover {
   outline: none;
   transition: background-color .1s ease;
   cursor: pointer;
-  padding: 11px 15px; }
+  padding: 11px 15px;
+  max-width: 400px; }
   .btn:hover, .btn:focus,
   a:not([href]):not([tabindex]):focus:hover,
   a:not([href]):not([tabindex]):focus:focus,
@@ -85,14 +86,14 @@ h1 {
   text-align: center; }
 
 h1, h2 {
-  font: 700 14px "Verdana", Helvetica, sans-serif;
+  font: 700 16px "Verdana", Helvetica, sans-serif;
   font-size: 24px;
   line-height: 32px;
   color: #000; }
 
 h1, h2, h3, h4, h4, h6 {
   color: #000;
-  font: 700 14px "Verdana", Helvetica, sans-serif;
+  font: 700 16px "Verdana", Helvetica, sans-serif;
   font-size: 24px; }
 
 ul,
@@ -121,14 +122,14 @@ ol {
 
 @media (min-width: 768px) {
   h1, h2 {
-    font: 700 14px "Verdana", Helvetica, sans-serif;
+    font: 700 16px "Verdana", Helvetica, sans-serif;
     font-size: 40px;
     line-height: 56px;
     color: #000; } }
 
 @media (min-width: 1200px) {
   h1, h2 {
-    font: 700 14px "Verdana", Helvetica, sans-serif;
+    font: 700 16px "Verdana", Helvetica, sans-serif;
     font-size: 50px;
     line-height: 72px;
     color: #000; } }
@@ -167,7 +168,7 @@ ol {
     display: inline-block;
     width: 100%;
     text-decoration: none;
-    font: 700 14px "Verdana", Helvetica, sans-serif;
+    font: 700 16px "Verdana", Helvetica, sans-serif;
     color: #000;
     text-align: center;
     padding-top: 35px;
@@ -257,7 +258,7 @@ ol {
     width: 113px; }
   .header__bot-share {
     font-size: 14px;
-    text-align: right; } }
+    text-align: center; } }
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .nav__item:nth-child(-n+2) {
@@ -279,9 +280,7 @@ ol {
     height: 34px;
     background: url("/img/zigzag-fill-desktop.png") 50% 0 repeat-x; }
   .nav__item-logo img {
-    width: 149px; }
-  .header__bot-share {
-    text-align: center; } }
+    width: 149px; } }
 
 #footer {
   background: #f1f1f1; }
@@ -443,7 +442,7 @@ ol {
   padding-left: 30px;
   padding-right: 30px;
   padding: 50px 30px 30px;
-  font: 700 14px "Verdana", Helvetica, sans-serif; }
+  font: 700 16px "Verdana", Helvetica, sans-serif; }
   @media (min-width: 768px) {
     .hero {
       padding-left: 50px;
@@ -792,7 +791,7 @@ ol {
 
 .product__promo {
   color: #63d1bb;
-  font: 300 14px "Open Sans", Helvetica, sans-serif;
+  font: 300 16px "Open Sans", Helvetica, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 16px; }
@@ -938,7 +937,7 @@ ol {
 
 .about__item {
   position: relative;
-  font: 700 14px "Verdana", Helvetica, sans-serif;
+  font: 700 16px "Verdana", Helvetica, sans-serif;
   font-size: 20px;
   padding-top: 50px;
   margin-bottom: 30px; }
@@ -1593,6 +1592,7 @@ ol {
 
 .card-item__content {
   flex-grow: 1;
+  flex-shrink: 1;
   padding: 0 30px;
   border: 1px solid #ececec; }
 
@@ -1613,7 +1613,7 @@ ol {
 
 .card-item__name,
 .card-item__price {
-  font: 700 14px "Verdana", Helvetica, sans-serif; }
+  font: 700 16px "Verdana", Helvetica, sans-serif; }
 
 .card-item__price {
   position: relative;
@@ -1635,6 +1635,11 @@ ol {
 .card-item__img {
   text-align: center;
   background-color: #bcbdbf; }
+
+@media (max-width: 400px) {
+  .catalog {
+    padding-left: 0;
+    padding-right: 0; } }
 
 @media (max-width: 767px) {
   .icon-phone {
@@ -1680,53 +1685,6 @@ ol {
   100% {
     box-shadow: 0px 0px 10px rgba(98, 209, 186, 0);
     background: rgba(98, 209, 186, 0); } }
-
-.video__container {
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 50px;
-  padding-bottom: 50px; }
-  @media (min-width: 768px) {
-    .video__container {
-      padding-left: 50px;
-      padding-right: 50px;
-      max-width: 1150px; } }
-
-#my-video {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 683px;
-  height: 455px; }
-
-.vjs-big-play-button {
-  height: 77px !important;
-  width: 101px !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  border: none !important;
-  outline: none !important;
-  transition: .25s !important; }
-  .vjs-big-play-button:hover {
-    zoom: 1.2 !important;
-    filter: brightness(110%); }
-  .vjs-big-play-button:active {
-    opacity: .7 !important; }
-
-.video-js .vjs-control-bar {
-  display: flex; }
-
-.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
-.vjs-icon-play:before {
-  content: "" !important;
-  background-image: url(../img/sprite.png);
-  background-position: 0px 0px;
-  width: 101px;
-  height: 78px; }
 
 /*
   Player Skin Designer for Video.js
@@ -1811,12 +1769,150 @@ ol {
   /* Otherwise we'll rely on stacked opacities */
   background: rgba(115, 133, 159, 0.75); }
 
-.video-js .vjs-control-bar {
-  display: flex; }
+.video__container {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 30px; }
+  @media (min-width: 768px) {
+    .video__container {
+      padding-left: 50px;
+      padding-right: 50px;
+      max-width: 1150px; } }
 
-@media (max-width: 767px) {
+.video__media-wrap {
+  width: 65%; }
+
+.vjs-control-bar {
+  color: #62d1ba; }
+
+.js-remaining-time {
+  order: 1; }
+
+.vjs-volume-panel {
+  order: 2; }
+
+.vjs-playback-rate,
+.vjs-fullscreen-control {
+  order: 3; }
+
+.vjs-big-play-button {
+  height: 77px !important;
+  width: 101px !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border: none !important;
+  outline: none !important;
+  transition: .25s !important;
+  background-color: transparent !important; }
+  .vjs-big-play-button:hover {
+    zoom: 1.2 !important;
+    filter: brightness(110%); }
+  .vjs-big-play-button:active {
+    opacity: .7 !important; }
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
+.vjs-icon-play:before {
+  content: "" !important;
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 101px;
+  height: 78px; }
+
+.video__container {
+  display: flex;
+  flex-direction: column; }
+
+.video__media-wrap {
+  width: 100%; }
+
+.video__desk {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  border: 1px solid #ececec;
+  padding: 30px; }
+
+.video__info {
+  padding-bottom: 25px; }
+
+.video__name {
+  position: relative;
+  font: 700 16px "Verdana", Helvetica, sans-serif;
+  padding-left: 70px;
+  margin-bottom: 0; }
+  .video__name::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(../img/sprite.png);
+    background-position: -115px -180px;
+    width: 32px;
+    height: 22px; }
+
+.video__name--top {
+  display: none; }
+
+.video__btn {
+  margin-top: auto; }
+
+@media (max-width: 400px) {
   .video__container {
-    padding-top: 25px;
-    padding-bottom: 25px;
     padding-left: 0;
     padding-right: 0; } }
+
+@media (max-width: 767px) {
+  .video__desk {
+    border-top: none; }
+  .video__name--top {
+    display: block; }
+  .video__name--bot {
+    display: none; } }
+
+@media (min-width: 768px) {
+  .video__container {
+    padding-top: 35px;
+    padding-bottom: 45px; }
+  .video__desk {
+    padding: 40px; }
+  .video__name--top,
+  .video__name,
+  .video__info {
+    margin-bottom: 30px; }
+  .video__name {
+    font-size: 18px; } }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .video__desk {
+    border-top: none; }
+  .video__name br {
+    display: none; } }
+
+@media (min-width: 1200px) {
+  .video__container {
+    flex-direction: row;
+    padding-top: 50px;
+    padding-bottom: 75px; }
+  .video__media-wrap {
+    width: 65%; }
+  .video__desk {
+    width: 35%;
+    padding: 45px 45px 60px 80px;
+    border-left: none; }
+  .video__name {
+    padding-top: 50px;
+    padding-left: 0; }
+    .video__name::before {
+      left: 0;
+      top: 0;
+      background-image: url(../img/sprite.png);
+      background-position: -115px -180px;
+      width: 32px;
+      height: 22px; } }
