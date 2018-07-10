@@ -37,6 +37,10 @@
   }
 }
 
+.card-item__parameters {
+  margin-bottom: 0;
+}
+
 .card-item__bonus {
   padding: 15px 0;
 }
@@ -49,6 +53,11 @@
 .card-item__price {
   position: relative;
   padding: 25px 0;
+}
+
+.card-item__name,
+.card-item__price {
+  @include f18();
 }
 
 .icon-phone {
@@ -87,6 +96,11 @@
 // mobile only start
 @media (max-width: 767px) {
 
+  .card-item__desk,
+  .card-item__price {
+    padding: 20px 0;
+  }
+
   .icon-phone {
     background-position-x: 100%;
     &:hover {
@@ -114,11 +128,6 @@
   .card-item__content {
     display: flex;
     flex-direction: column;
-    //margin-top: auto;
-    //&::after {
-    //  content: '';
-    //  //background: red url('/img/icons/phone-hv.png') no-repeat;
-    //}
   }
 
   .card-item__price {

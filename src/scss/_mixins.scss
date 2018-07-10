@@ -38,3 +38,91 @@
   max-width: 1150px;
 }
 // @include mw();
+
+@mixin f15() {
+  font-size: 15px;
+
+  // mobile only start
+  @media (max-width: 767px) {
+
+    font-size: 13px;
+
+  // mobile only end
+  }
+
+  // tablet only start
+  @media (min-width: 768px) and (max-width: 1199px) {
+
+    font-size: 14px;
+
+  // tablet only end
+  }
+}
+
+@mixin f16() {
+  font-size: 16px;
+
+  // mobile only start
+  @media (max-width: 767px) {
+
+    font-size: 14px;
+
+  // mobile only end
+  }
+
+  // tablet only start
+  @media (min-width: 768px) and (max-width: 1199px) {
+
+    font-size: 15px;
+
+  // tablet only end
+  }
+}
+
+@mixin f17() {
+  font-size: 17px;
+
+  // mobile only start
+  @media (max-width: 767px) {
+
+    font-size: 15px;
+
+  // mobile only end
+  }
+
+  // tablet only start
+  @media (min-width: 768px) and (max-width: 1199px) {
+
+    font-size: 16px;
+
+  // tablet only end
+  }
+}
+
+@mixin f18() {
+  font-size: 18px;
+
+  // mobile only start
+  @media (max-width: 767px) {
+
+    font-size: 16px;
+
+  // mobile only end
+  }
+
+  // tablet only start
+  @media (min-width: 768px) and (max-width: 1199px) {
+
+    font-size: 17px;
+
+  // tablet only end
+  }
+}
+
+@mixin hv() {
+    filter: brightness(105%);
+}
+
+@mixin act() {
+    opacity: .7;
+}

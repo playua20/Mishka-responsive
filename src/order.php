@@ -1,3 +1,4 @@
+<?php require('php/keys.php'); ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -162,15 +163,15 @@
             <div class="form__b-content  form__b-naming">
               <div class="form__b-item">
                 <label for="subname">Фамилия:</label>
-                <input type="text" name="subname" id="subname" placeholder="Укажите фамилию">
+                <input type="text" name="order-subname" id="subname" placeholder="Укажите фамилию">
               </div>
               <div class="form__b-item">
                 <label for="name">Имя:</label>
-                <input type="text" name="name" id="name" placeholder="Введите Ваше имя">
+                <input type="text" name="order-name" id="name" placeholder="Введите Ваше имя">
               </div>
               <div class="form__b-item">
                 <label for="patronymic">Отчество:</label>
-                <input type="text" name="patronymic" id="patronymic" placeholder="Отчество, если желаете">
+                <input type="text" name="order-patronymic" id="patronymic" placeholder="Отчество, если желаете">
               </div>
             </div>
           </div>
@@ -183,7 +184,7 @@
             </div>
             <div class="form__b-content">
               <div class="form__b-item  form__b-item-tel">
-                <input type="tel" name="tel" placeholder="+3 XXX XX XX">
+                <input type="tel" name="order-tel" placeholder="+3 XXX XX XX">
               </div>
             </div>
           </div>
@@ -192,7 +193,7 @@
               <b>E-mail</b><span class="form__b-name-line"></span>
             </div>
             <div class="form__b-content  form__b-item-mail">
-              <input type="email" name="email" placeholder="katy@gmail.com">
+              <input type="email" name="order-email" placeholder="katy@gmail.com">
             </div>
           </div>
         </div>
@@ -203,7 +204,7 @@
               <b>Доп</b><span class="form__b-name-line"></span>
             </div>
             <div class="form__b-content">
-              <textarea name="msg" rows="6" placeholder="Опишите все ваши пожелания к заказу"></textarea>
+              <textarea name="order-msg" rows="6" placeholder="Опишите все ваши пожелания к заказу"></textarea>
 
               <div class="order-status"></div>
               <div class="preloader">
@@ -214,7 +215,7 @@
                   <span></span>
                 </div>
               </div>
-              <div class="g-recaptcha" data-sitekey="6LcaPWMUAAAAANj6NGAkyBMuqsizRatuy968T23A"></div>
+              <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
               <button class="btn  form__btn" type="submit">Отправить заказ</button>
             </div>
           </div>
@@ -263,60 +264,6 @@
     </div>
   </div>
 </footer>
-<div class="buy-modal  mymodal">
-  <b class="call-us">Свяжитесь с нами:</b>
-  <div class="buy-modal__phone">
-    <p>+38 (050) 555-55-55</p>
-    <p>+38 (063) 666-66-66</p>
-  </div>
-  <input type="button" class="buy-btn  btn" value="Ok">
-</div>
-<div class="reviews-modal  mymodal  container">
-  <form id="reviews-form" class="row" method="POST">
-    <input name="reviews-name" type="text" class="reviews__name  col-12  col-md-5" placeholder="Кира">
-    <input name="reviews-email" type="email" class="reviews__email  col-12  col-md-6"
-           placeholder="kirakira@gmail.com">
-    <textarea name="reviews-msg" class="reviews__msg col-12" placeholder="Ваш отзыв..." cols="5"></textarea>
-    <div class="col-12  preloader">
-      <div class="reviews-preloader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <div class="reviews-status  col-12"></div>
-    <div class="btn-wrap  col-12  col-md-6 px-0">
-      <button class="reviews-btn__success  btn" type="submit">Отправить</button>
-    </div>
-    <div class="btn-wrap col-12  col-md-6 px-0">
-      <a class="reviews-btn__close  btn" title="Отменить">Отменить</a>
-    </div>
-  </form>
-</div>
-<div class="contacts-modal  mymodal  container">
-  <form id="contacts-form" class="row" method="POST">
-    <input name="contacts-name" type="text" class="contacts__name  col-12  col-md-5" placeholder="Кира">
-    <input name="contacts-email" type="email" class="contacts__email  col-12  col-md-6"
-           placeholder="kirakira@gmail.com">
-    <textarea name="contacts-msg" class="contacts__msg  col-12" placeholder="Ваш отзыв..." cols="5"></textarea>
-    <div class="col-12  preloader">
-      <div class="contacts-preloader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <div class="contacts-status  col-12"></div>
-    <div class="btn-wrap col-12  col-md-6 px-0">
-      <button class="contacts-btn__success  btn" type="submit">Отправить</button>
-    </div>
-    <div class="btn-wrap col-12  col-md-6 px-0">
-      <a class="contacts-btn__close btn" title="Отменить">Отменить</a>
-    </div>
-  </form>
-</div>
 <div id="modal-overlay"></div>
 <div class="scroll-top" title="Вверх"><span>&#8673</span></div>
 <link rel="stylesheet" href="css/libs.min.css">
