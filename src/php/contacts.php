@@ -3,20 +3,20 @@
 require('phpmailer/src/PHPMailer.php');
 require('phpmailer/src/SMTP.php');
 
-$name = filter_var($_POST["reviews-name"], FILTER_SANITIZE_STRING);
-$tel = filter_var($_POST["reviews-tel"], FILTER_SANITIZE_NUMBER_INT);
-$from = filter_var($_POST["reviews-email"], FILTER_SANITIZE_EMAIL);
-$msg = filter_var($_POST["reviews-msg"], FILTER_SANITIZE_STRING);
+$name = filter_var($_POST["contacts-name"], FILTER_SANITIZE_STRING);
+$from = filter_var($_POST["contacts-email"], FILTER_SANITIZE_EMAIL);
+$msg = filter_var($_POST["contacts-msg"], FILTER_SANITIZE_STRING);
+//$tel = filter_var($_POST["contacts-tel"], FILTER_SANITIZE_NUMBER_INT);
 
 
+////if (empty($tel)) {
+////  $empty[] = "<b>мобильный</b>";
+////}
 if (empty($name)) {
   $empty[] = "<b>имя</b>";
 }
 if (empty($from)) {
-  $empty[] = "<b>e-amail</b>";
-}
-if (empty($tel)) {
-  $empty[] = "<b>e-amail</b>";
+  $empty[] = "<b>e-mail</b>";
 }
 if (empty($msg)) {
   $empty[] = "<b>отзыв</b>";
@@ -34,7 +34,7 @@ if (!filter_var($from, FILTER_VALIDATE_EMAIL)) { //email validation
 $br = '<br>';
 $body = 'Имя: ' . $name . $br .
   'e-mail: ' . $from . $br .
-  'Отзыв: ' . $msg;
+  'Сообщение: ' . $msg;
 
 $to = 'admin@sedona.kl.com.ua';
 $subject = 'mishka.kl.com.ua - новое сообщение от ' . $name;

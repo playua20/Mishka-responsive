@@ -1,5 +1,5 @@
-$(function() {
-  $('.product__btn, .icon-phone, .video__btn').click(function (e) {
+$(function () {
+  $('.product__btn, .icon-phone, .video__btn').on('click', function (e) {
     e.preventDefault();
     $('.buy-modal, #modal-overlay').fadeIn(150);
     $('.buy-btn').focus();
@@ -34,8 +34,28 @@ $(function () {
 
 $(function () {
   $('.reviews__btn').click(function (e) {
+      e.preventDefault();
+    $('.reviews-modal, #modal-overlay, .reviews-btn__success').show();
+      $('.reviews-btn__success').parent().show();
+      $('.reviews-btn__close').text('Отменить');
+      $('.reviews-btn__close').attr('title', 'Отменить');
+      $('.reviews-btn__close').removeClass('.reviews-btn__ok');
+  });
+});
+
+$(function () {
+  $('.reviews-btn__ok').click(function (e) {
+      e.preventDefault();
+    $('#reviews-form input, #reviews-form textarea').val('');
+    $('.reviews-status').hide();
+  });
+});
+
+$(function () {
+  $('.reviews-modal').on('click', '.reviews-btn__ok', function (e) {
     e.preventDefault();
-    $('.reviews-modal, #modal-overlay').show();
+    $('#reviews-form input, #reviews-form textarea').val('');
+    $('.reviews-status, reviews-status--success, reviews-status--error').hide();
   });
 });
 
@@ -61,6 +81,10 @@ $(function () {
             $('.reviews-status').addClass('reviews-status--error');
           } else if (response.type == 'done') {
             $('.reviews-status').addClass('reviews-status--success');
+            $('.reviews-btn__success').parent().hide();
+            $('.reviews-btn__close').addClass('reviews-btn__ok');
+            $('.reviews-btn__close').text('Ok');
+            $('.reviews-btn__close').removeAttr('title');
           }
           $('.reviews-status').html(response.text);
         },
@@ -74,7 +98,19 @@ $(function () {
 $(function () {
   $('.contacts__btn').click(function (e) {
     e.preventDefault();
-    $('.contacts-modal, #modal-overlay').show();
+    $('.contacts-modal, #modal-overlay, .contacts-btn__success').show();
+    $('.contacts-btn__success').parent().show();
+    $('.contacts-btn__close').text('Отменить');
+    $('.contacts-btn__close').attr('title', 'Отменить');
+    $('.contacts-btn__close').removeClass('contacts-btn__ok');
+  });
+});
+
+$(function () {
+  $('.contacts-modal').on('click', '.contacts-btn__ok', function (e) {
+    e.preventDefault();
+    $('#contacts-form input, #contacts-form textarea').val('');
+    $('.contacts-status, contacts-status--success, contacts-status--error').hide();
   });
 });
 
@@ -100,10 +136,47 @@ $(function () {
             $('.contacts-status').addClass('contacts-status--error');
           } else if (response.type == 'done') {
             $('.contacts-status').addClass('contacts-status--success');
+            $('.contacts-btn__success').parent().hide();
+            $('.contacts-btn__close').addClass('contacts-btn__ok');
+            $('.contacts-btn__close').text('Ok');
+            $('.contacts-btn__close').removeAttr('title');
           }
           $('.contacts-status').html(response.text);
         },
         error: function () {
+        }
+      });
+    })
+  );
+});
+
+$(function () {
+  $('#order-form').on('submit', (function (e) {
+      e.preventDefault();
+      var formData = new FormData($(this)[0]);
+      $('.order-status').hide();
+      $('.order-preloader').show();
+      $.ajax({
+        url: 'php/order-mail.php',
+        type: 'POST',
+        dataType: 'json',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function (response) {
+          $('.order-status').fadeIn('fast');
+          $('.order-preloader').hide();
+          if (response.type == 'error') {
+            $('.order-status').addClass('order-status__error');
+          } else if (response.type == 'done') {
+            $('.order-status').addClass('order-status__success');
+            $('.form__btn').detach();
+          }
+          $('.order-status').html(response.text);
+        },
+        error: function () {
+          alert('ошибочка');
         }
       });
     })

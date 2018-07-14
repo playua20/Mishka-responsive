@@ -7,11 +7,16 @@
   <title>Mishka - magazine</title>
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
-  <object id="object" type="image/svg+xml" data="img/symbol/sprite.svg"
-          style="height: 0; width: 0; position: absolute; left: 9999px;">
+  <link rel="manifest" href="img/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <object id="object" type="image/svg+xml" data="img/symbol/sprite.svg" style="height: 0; width: 0; position: absolute; left: 9999px;">
     Your browser does not support SVG
   </object>
   <script async defer
@@ -112,7 +117,7 @@
         <div class="form__b-wrap">
           <div class="form__b  form__b-color">
             <div class="form__b-name">
-              <b>Цвет</b><span class="form__b-name-line"></span>
+              <b class="form__b-require">Цвет</b><span class="form__b-name-line"></span>
             </div>
             <div class="form__b-content">
               <div class="form__b-item">
@@ -143,7 +148,7 @@
                 <input type="checkbox" name="ch-group__color[]" id="pink" value="«тиффани»">
                 <label for="pink">
                   <span class="ch-indicator"></span>
-                  розовый</label>
+                  Розовый</label>
               </div>
               <div class="form__b-item">
                 <input type="checkbox" name="ch-group__color[]" id="orange" value="оранжевый">
@@ -166,7 +171,7 @@
                 <input type="text" name="order-subname" id="subname" placeholder="Укажите фамилию">
               </div>
               <div class="form__b-item">
-                <label for="name">Имя:</label>
+                <label class="form__b-require" for="name">Имя:</label>
                 <input type="text" name="order-name" id="name" placeholder="Введите Ваше имя">
               </div>
               <div class="form__b-item">
@@ -180,7 +185,7 @@
         <div class="form__b-wrap  form__b-wrap-contacts">
           <div class="form__b">
             <div class="form__b-name">
-              <b>Тел</b><span class="form__b-name-line"></span>
+              <b class="form__b-require">Тел</b><span class="form__b-name-line"></span>
             </div>
             <div class="form__b-content">
               <div class="form__b-item  form__b-item-tel">
@@ -190,7 +195,7 @@
           </div>
           <div class="form__b">
             <div class="form__b-name">
-              <b>E-mail</b><span class="form__b-name-line"></span>
+              <b class="form__b-require">E-mail</b><span class="form__b-name-line"></span>
             </div>
             <div class="form__b-content  form__b-item-mail">
               <input type="email" name="order-email" placeholder="katy@gmail.com">

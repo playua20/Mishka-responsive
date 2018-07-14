@@ -1,16 +1,8 @@
 $ff: 300 16px "Open Sans", Helvetica, sans-serif;
 $ff2: 700 16px "Verdana", Helvetica, sans-serif;
-$bg: #fff; // accent background
-$bgh: lighten($bg, 10%); // hover
-$bga: darken($bg, 10%); // active
 
-$inp: #fff; // input accent background
-$inph: lighten($inp, 10%); // input hover
-$inpa: darken($inp, 10%); // input active
-
-$btn: #f9f9f9; // btn accent background
-$btnh: lighten($inp, 10%); // btn hover
-$btna: darken($inp, 10%); // btn active
+$c: #62d1ba;
+$c2: #FF8AD4;
 
 // tablet start
 @media (min-width: 768px) {

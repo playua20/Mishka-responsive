@@ -6,10 +6,16 @@
   <title>Mishka - magazine</title>
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="css/style.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
-  <object id="object" type="image/svg+xml" data="img/symbol/sprite.svg">
+  <link rel="manifest" href="img/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <object id="object" type="image/svg+xml" data="img/symbol/sprite.svg" style="height: 0; width: 0; position: absolute; left: 9999px;">
     Your browser does not support SVG
   </object>
   <script async defer
@@ -162,7 +168,7 @@
           <div class="product__order  col-12  col-md-5  col-lg-4  offset-lg-1">
             <p class="product__price-wrap"><span class="product__price">Цена:</span>
               <span class="product__value">120$</span></p>
-            <div href="#" class="btn product__btn">Заказать</div>
+            <a class="btn product__btn">Заказать</a>
           </div>
         </div>
       </article>
@@ -218,7 +224,7 @@
           <div class="product__order  col-12  col-md-5  col-lg-4  offset-lg-1">
             <p class="product__price-wrap"><span class="product__price">Цена:</span>
               <span class="product__value">100$</span></p>
-            <a href="#" class="btn product__btn">Заказать</a>
+            <a class="btn product__btn">Заказать</a>
           </div>
         </div>
       </article>
@@ -365,6 +371,7 @@
 </div>
 <div class="reviews-modal  mymodal  container">
   <form id="reviews-form" class="row" method="POST">
+    <h3 class="col-12">Отзыв</h3>
     <input name="reviews-name" type="text" class="reviews__name  col-12  col-md-5" placeholder="Кира">
     <input name="reviews-email" type="email" class="reviews__email  col-12  col-md-6"
            placeholder="kirakira@gmail.com">
@@ -382,16 +389,17 @@
       <button class="reviews-btn__success  btn" type="submit">Отправить</button>
     </div>
     <div class="btn-wrap col-12  col-md-6 px-0">
-      <a class="reviews-btn__close  btn" title="Отменить">Отменить</a>
+      <a class="reviews-btn__close  btn"></a>
     </div>
   </form>
 </div>
 <div class="contacts-modal  mymodal  container">
   <form id="contacts-form" class="row" method="POST">
+    <h3 class="col-12">Сообщение</h3>
     <input name="contacts-name" type="text" class="contacts__name  col-12  col-md-5" placeholder="Кира">
     <input name="contacts-email" type="email" class="contacts__email  col-12  col-md-6"
            placeholder="kirakira@gmail.com">
-    <textarea name="contacts-msg" class="contacts__msg  col-12" placeholder="Ваш отзыв..." cols="5"></textarea>
+    <textarea name="contacts-msg" class="contacts__msg  col-12" placeholder="Вашe сообщение..." cols="5"></textarea>
     <div class="col-12  preloader">
       <div class="contacts-preloader">
         <span></span>
@@ -405,7 +413,7 @@
       <button class="contacts-btn__success  btn" type="submit">Отправить</button>
     </div>
     <div class="btn-wrap col-12  col-md-6 px-0">
-      <a class="contacts-btn__close btn" title="Отменить">Отменить</a>
+      <a class="contacts-btn__close btn"></a>
     </div>
   </form>
 </div>

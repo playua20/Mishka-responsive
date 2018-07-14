@@ -12,6 +12,7 @@
   }
   // tablet end
 }
+
 // @include cf();
 
 // минус row padding
@@ -29,6 +30,7 @@
   }
   // tablet end
 }
+
 // @include bcf();
 
 @mixin mw() {
@@ -37,7 +39,12 @@
   margin-right: auto;
   max-width: 1150px;
 }
+
 // @include mw();
+
+@mixin c() {
+
+}
 
 @mixin f15() {
   font-size: 15px;
@@ -47,7 +54,7 @@
 
     font-size: 13px;
 
-  // mobile only end
+    // mobile only end
   }
 
   // tablet only start
@@ -55,7 +62,7 @@
 
     font-size: 14px;
 
-  // tablet only end
+    // tablet only end
   }
 }
 
@@ -67,7 +74,7 @@
 
     font-size: 14px;
 
-  // mobile only end
+    // mobile only end
   }
 
   // tablet only start
@@ -75,7 +82,7 @@
 
     font-size: 15px;
 
-  // tablet only end
+    // tablet only end
   }
 }
 
@@ -87,7 +94,7 @@
 
     font-size: 15px;
 
-  // mobile only end
+    // mobile only end
   }
 
   // tablet only start
@@ -95,7 +102,7 @@
 
     font-size: 16px;
 
-  // tablet only end
+    // tablet only end
   }
 }
 
@@ -107,7 +114,7 @@
 
     font-size: 16px;
 
-  // mobile only end
+    // mobile only end
   }
 
   // tablet only start
@@ -115,14 +122,22 @@
 
     font-size: 17px;
 
-  // tablet only end
+    // tablet only end
   }
 }
 
 @mixin hv() {
-    filter: brightness(105%);
+  filter: brightness(105%);
 }
 
 @mixin act() {
-    opacity: .7;
+  opacity: .7;
+}
+
+@mixin hv2() {
+  filter: lighten(10%);
+}
+
+@mixin act2() {
+  filter: darken(10%);
 }

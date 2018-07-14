@@ -1,7 +1,8 @@
+@import 'my-bstrap';
 @import 'variables';
 @import 'mixins';
 @import 'base';
-@import 'sprite'; // спрайм обязательно перед блоками
+@import 'sprite'; // спрайт обязательно перед блоками
 @import 'blocks/header';
 @import 'blocks/footer';
 @import 'blocks/nav';
@@ -20,3 +21,4 @@
 @import 'blocks/video';
 @import 'blocks/form';
 @import 'blocks/order';
+@import 'blocks/recaptcha';

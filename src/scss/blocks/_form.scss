@@ -123,19 +123,14 @@ input[type=email] {
   @include sprite($mail);
 }
 
-.form__b-item-tel:hover::after {
+.form__b-item-tel:hover::after,
+.form__b-item-tel:focus::after {
   @include sprite($phone-hv);
 }
 
-.form__b-item-mail:hover::after {
-  @include sprite($mail-hv);
-}
-
-.form__b-item-tel:active::after,
-.form__b-item-mail:active::after
-.form__b-item-tel:focus::after,
+.form__b-item-mail:hover::after,
 .form__b-item-mail:focus::after {
-  @include act();
+  @include sprite($mail-hv);
 }
 
 input[type=text]:hover,
@@ -145,9 +140,9 @@ textarea:hover {
   border-color: #62d1ba;
 }
 
-label:focus + input[type=text],
-label:focus + input[type=tel],
-label:focus + input[type=email],
+input[type=text]:focus,
+input[type=tel]:focus,
+input[type=email]:focus,
 textarea:focus {
   border-color: #62d1ba;
 }
@@ -224,6 +219,18 @@ textarea:focus {
 
 .form__btn {
   width: 100%;
+}
+
+.form__b-require {
+  position: relative;
+  &::after {
+    content: '*';
+    position: absolute;
+    color: #FF8AD4;
+    @include f17();
+    margin-left: 3px;
+    margin-top: -3px;
+  }
 }
 
 // mobile only start

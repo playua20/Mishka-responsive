@@ -10,7 +10,6 @@ $from = filter_var($_POST["order-email"], FILTER_SANITIZE_EMAIL);
 $tel = filter_var($_POST["order-tel"], FILTER_SANITIZE_NUMBER_INT);
 $radio = $_POST['r-group__type'];
 $checkbox = nl2br(implode(', ', $_POST['ch-group__color']));
-//$date = $_POST["date"];
 $msg = filter_var($_POST["order-msg"], FILTER_SANITIZE_STRING);
 
 
@@ -23,12 +22,12 @@ if (empty($name)) {
 //   // if (empty($patronymic)) {
 //   //     $empty[] = "<b>Отчество</b>";
 //   // }
-//   if (empty($from)) {
-//       $empty[] = "<b>Электронная почта</b>";
-//   }
-//   // if (empty($tel)) {
-//   //     $empty[] = "<b>Контактный телефон</b>";
-//   // }
+   if (empty($from)) {
+       $empty[] = "<b>E-mail</b>";
+   }
+    if (empty($tel)) {
+      $empty[] = "<b>Контактный телефон</b>";
+    }
 //   // if (empty($radio)) {
 //   //     $empty[] = "<b>Ваше общее впечатление</b>";
 //   // }
@@ -63,22 +62,15 @@ if (isset($_POST['g-recaptcha-response'])) {
   }
 }
 
-//$br = '<br>';
-//$body = 'Имя: ' . $name . $br .
-//  'Фамилия: ' . $surname . $br .
-//  'Отчество: ' . $patronymic . $br .
-//  'Электронная почта: ' . $from . $br .
-//  'Тел.: ' . $tel . $br .
-//  'Модель бороды: ' . $radio . $br .
-//  'Дополнительные услуги: ' . $checkbox . $br .
-//  'Время посещения: ' . $date . $br .
-//  'Сообщение: ' . $msg;
-
-
 $br = '<br>';
 $body = 'Имя: ' . $name . $br .
-  'e-mail: ' . $from . $br .
-  'Отзыв: ' . $msg;
+  'Фамилия: ' . $surname . $br .
+  'Отчество: ' . $patronymic . $br .
+  'E-mail: ' . $from . $br .
+  'Тел.: ' . $tel . $br .
+  'Тип: ' . $radio . $br .
+  'Цвет: ' . $checkbox . $br .
+  'Сообщение: ' . $msg;
 
 $to = 'admin@sedona.kl.com.ua';
 $subject = 'mishka.kl.com.ua - новое сообщение от ' . $name;
@@ -128,7 +120,7 @@ if(!$mail->Send()) {
   $output = json_encode(array('type' => 'error', 'text' => 'Не удалось отправить письмо, пожалуйста, свяжитесь с нами: ' . '<b>' . $to . '<b>'));
   die($output);
 } else {
-  $output = json_encode(array('type' => 'done', 'text' => $name . ', ждем Вас в назначенное время!'));
+  $output = json_encode(array('type' => 'done', 'text' => $name . ', спасибо, мы перезвоним Вам!'));
   die($output);
 }
 ?>
