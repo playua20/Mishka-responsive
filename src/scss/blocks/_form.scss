@@ -91,9 +91,16 @@ input[type=email] {
   padding-right: 40px;
   border: none;
   border-bottom: 2px solid #444;
+  white-space: nowrap;
 }
 
-.form__b-item {
+input[type=tel],
+input[type=email] {
+  padding-right: 40px;
+}
+
+.form__b-item,
+.form__b-wrap-contacts .form__b {
   margin-bottom: 25px;
 }
 
@@ -124,11 +131,13 @@ input[type=email] {
 }
 
 .form__b-item-tel:hover::after,
+.form__b-item-tel:active::after,
 .form__b-item-tel:focus::after {
   @include sprite($phone-hv);
 }
 
 .form__b-item-mail:hover::after,
+.form__b-item-mail:active::after,
 .form__b-item-mail:focus::after {
   @include sprite($mail-hv);
 }
@@ -235,6 +244,14 @@ textarea:focus {
 
 // mobile only start
 @media (max-width: 767px) {
+
+  input[type=text],
+  input[type=tel],
+  input[type=email] {
+    height: 42px;
+    line-height: 42px;
+  }
+
   .form__intro,
   .form__b {
     max-width: 400px;
@@ -262,6 +279,10 @@ textarea:focus {
     input[type=tel],
     input[type=email] {
       background: #F1F1F1;
+    }
+
+    .form__b-name, .form__item {
+      margin-bottom: 0;
     }
 
   }
@@ -363,6 +384,11 @@ textarea:focus {
     padding-bottom: 50px;
   }
 
+
+  .form__intro p {
+    padding-left: 19%;
+  }
+  
   .form__b-name {
     width: 19%;
     b {

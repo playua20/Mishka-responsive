@@ -9,14 +9,15 @@
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicons/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
   <link rel="manifest" href="img/favicons/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-  <object id="object" type="image/svg+xml" data="img/symbol/sprite.svg" style="height: 0; width: 0; position: absolute; left: 9999px;">
+  <object id="object" type="image/svg+xml" data="img/symbol/sprite.svg"
+          style="height: 0; width: 0; position: absolute; left: 9999px;">
     Your browser does not support SVG
   </object>
   <script async defer
@@ -189,7 +190,7 @@
             </div>
             <div class="form__b-content">
               <div class="form__b-item  form__b-item-tel">
-                <input type="tel" name="order-tel" placeholder="+3 XXX XX XX">
+                <input type="tel" name="order-tel" placeholder="+3 (050) XXX-XX-XX">
               </div>
             </div>
           </div>
@@ -210,7 +211,7 @@
             </div>
             <div class="form__b-content">
               <textarea name="order-msg" rows="6" placeholder="Опишите все ваши пожелания к заказу"></textarea>
-
+              <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
               <div class="order-status"></div>
               <div class="preloader">
                 <div class="order-preloader">
@@ -220,7 +221,6 @@
                   <span></span>
                 </div>
               </div>
-              <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
               <button class="btn  form__btn" type="submit">Отправить заказ</button>
             </div>
           </div>

@@ -174,6 +174,15 @@ $(function () {
   });
 });
 
+$(function() {
+  $('.rc-anchor-normal-footer').css('margin-left', '-20px !important')
+});
+
+$(function() {
+  $(['.rc-anchor-light.rc-anchor-normal, .rc-anchor-normal']).css({'box-sizing': 'border-box !important;',
+    'max-width': '260px !important;'})
+});
+
 $(function () {
   $('.product__btn, .icon-phone, .video__btn').on('click', function (e) {
     e.preventDefault();
@@ -419,4 +428,12 @@ videojs('#my-video', options);
 //       });
 //     })
 //   );
+// });
+
+// $(function() {
+//   $('.rc-anchor-normal-footer').css('margin-left', '-20px !important')
+// });
+// $(function() {
+//   $(['.rc-anchor-light.rc-anchor-normal, .rc-anchor-normal']).css({'box-sizing': 'border-box !important;',
+//     'max-width': '260px !important;'})
 // });

@@ -98,7 +98,6 @@ function js() {
       })
     }))
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('./dist/js'))
     // .pipe(rename({suffix: '.min'}))
     .pipe(rename('main.min.js'))
     .pipe(uglify())
