@@ -21,6 +21,10 @@
   padding: 0;
 }
 
+.nav__list {
+  display: flex;
+}
+
 .nav__item-logo-mobile {
   display: none;
 }
@@ -76,8 +80,22 @@
   .nav {
     position: relative;
   }
+  .nav__list {
+    position: relative;
+    display: none;
+    padding-bottom: 80px;
+  }
+  .nav__list--no-js {
+    display: flex;
+  }
   .nav__item {
     position: relative;
+    order: 1;
+  }
+  .nav__item-logo {
+    order: 2;
+    position: absolute;
+    bottom: 0;
   }
   .nav__item-logo-mobile::after,
   .nav__item::after {
@@ -93,9 +111,6 @@
   .nav__item a {
     padding-top: 30px;
     padding-bottom: 30px;
-  }
-  .nav__item-logo {
-    order: 1;
   }
   .nav__item-logo a {
     padding: 0;
@@ -131,6 +146,14 @@
       height: 24px;
       background: url('/img/zigzag-fill-tab.png') 50% 0 repeat-x;
     }
+  }
+
+  .nav__list {
+    display: flex !important;
+  }
+
+  .hamburger-close {
+    display: none !important;
   }
 
   .nav__item:first-child::after,

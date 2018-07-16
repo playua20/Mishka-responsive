@@ -40,9 +40,9 @@
           </picture>
         </a>
       </div>
-      <nav class="nav  nav--closed  nav--nojs  col">
+      <nav class="nav  col">
         <div class="nav__inner  container">
-          <ul class="nav__list  row">
+          <ul class="nav__list  nav__list--no-js  row">
             <li class="nav__item  col-12  col-md"><a href="works.html">Каталог товаров</a></li>
             <li class="nav__item  col-12  col-md"><a href="order.php">Вязание на заказ</a></li>
             <li class="nav__item  nav__item-logo  nav__item--active  col-12  col-md">

@@ -1,9 +1,10 @@
-$(function () {
-  $('.hamburger, .hamburger-close').click(function () {
-    $('.nav__list').slideToggle('fast');
-    $('.hamburger-close').fadeToggle('fast');
-  });
-});
+// $(function () {
+//   $('.nav__list').removeClass('nav__list--no-js');
+//   $('.hamburger, .hamburger-close').click(function () {
+//     $('.nav__list').slideToggle('fast');
+//     $('.hamburger-close').fadeToggle(100);
+//   });
+// });
 
 $(function () {
   $(window).scroll(function () {
@@ -151,18 +152,17 @@ $(function () {
     // $target.css('background', 'red');
 
 
-
-    (function($){
+    (function ($) {
 
       $.fn.extend({
 
-        addTemporaryClass: function(className, duration) {
+        addTemporaryClass: function (className, duration) {
           var elements = this;
-          setTimeout(function() {
+          setTimeout(function () {
             elements.removeClass(className);
           }, duration);
 
-          return this.each(function() {
+          return this.each(function () {
             $(this).addClass(className);
           });
         }

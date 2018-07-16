@@ -98,6 +98,7 @@ function js() {
       })
     }))
     .pipe(concat('main.js'))
+    .pipe(gulp.dest('./dist/js'))
     // .pipe(rename({suffix: '.min'}))
     .pipe(rename('main.min.js'))
     .pipe(uglify())
@@ -224,7 +225,7 @@ function robots() {
 
 gulp.task(
   "copy",
-  gulp.series(jqCustom, video)
+  gulp.series(jqCustom, )
 );
 
 gulp.task(
@@ -234,7 +235,7 @@ gulp.task(
 
 gulp.task(
   "build",
-  gulp.series(clean, clear, gulp.parallel(html, pHtml, css, cssLibs, js, jsLibs, img, php), webP, svg, sprite)
+  gulp.series(clean, clear, gulp.parallel(html, pHtml, css, cssLibs, js, jsLibs, img, php), webP, svg, favicons, sprite)
 );
 
 function webP() {
@@ -287,6 +288,6 @@ function sprite() {
       cssName: '_sprite.scss'
     }));
 
-  spriteData.img.pipe(gulp.dest('./dist/img'));
+  spriteData.img.pipe(gulp.dest('./dist/img/icons'));
   spriteData.css.pipe(gulp.dest('./src/scss'));
 }

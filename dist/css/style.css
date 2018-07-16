@@ -175,6 +175,9 @@ ol {
   margin: 0;
   padding: 0; }
 
+.nav__list {
+  display: flex; }
+
 .nav__item-logo-mobile {
   display: none; }
 
@@ -218,8 +221,19 @@ ol {
 @media (max-width: 767px) {
   .nav {
     position: relative; }
+  .nav__list {
+    position: relative;
+    display: none;
+    padding-bottom: 80px; }
+  .nav__list--no-js {
+    display: flex; }
   .nav__item {
-    position: relative; }
+    position: relative;
+    order: 1; }
+  .nav__item-logo {
+    order: 2;
+    position: absolute;
+    bottom: 0; }
   .nav__item-logo-mobile::after,
   .nav__item::after {
     content: '';
@@ -233,8 +247,6 @@ ol {
   .nav__item a {
     padding-top: 30px;
     padding-bottom: 30px; }
-  .nav__item-logo {
-    order: 1; }
   .nav__item-logo a {
     padding: 0;
     line-height: 80px; }
@@ -261,6 +273,10 @@ ol {
       z-index: 22;
       height: 24px;
       background: url("/img/zigzag-fill-tab.png") 50% 0 repeat-x; }
+  .nav__list {
+    display: flex !important; }
+  .hamburger-close {
+    display: none !important; }
   .nav__item:first-child::after,
   .nav__item:last-child::after {
     content: '';
@@ -548,6 +564,9 @@ ol {
   border: 0;
   background-color: transparent; }
 
+.hamburger-close {
+  display: none; }
+
 .hamburger-box {
   position: relative;
   display: inline-block;
@@ -740,6 +759,7 @@ ol {
 
 .interior a,
 .toys a {
+  display: block;
   width: 100%;
   position: relative;
   height: 136px;

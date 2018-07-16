@@ -1,9 +1,10 @@
-$(function () {
-  $('.hamburger, .hamburger-close').click(function () {
-    $('.nav__list').slideToggle('fast');
-    $('.hamburger-close').fadeToggle('fast');
-  });
-});
+// $(function () {
+//   $('.nav__list').removeClass('nav__list--no-js');
+//   $('.hamburger, .hamburger-close').click(function () {
+//     $('.nav__list').slideToggle('fast');
+//     $('.hamburger-close').fadeToggle(100);
+//   });
+// });
 
 $(function () {
   $(window).scroll(function () {
@@ -151,18 +152,17 @@ $(function () {
     // $target.css('background', 'red');
 
 
-
-    (function($){
+    (function ($) {
 
       $.fn.extend({
 
-        addTemporaryClass: function(className, duration) {
+        addTemporaryClass: function (className, duration) {
           var elements = this;
-          setTimeout(function() {
+          setTimeout(function () {
             elements.removeClass(className);
           }, duration);
 
-          return this.each(function() {
+          return this.each(function () {
             $(this).addClass(className);
           });
         }
@@ -172,15 +172,6 @@ $(function () {
 
     $target.addTemporaryClass("target-anime", 3000);
   });
-});
-
-$(function() {
-  $('.rc-anchor-normal-footer').css('margin-left', '-20px !important')
-});
-
-$(function() {
-  $(['.rc-anchor-light.rc-anchor-normal, .rc-anchor-normal']).css({'box-sizing': 'border-box !important;',
-    'max-width': '260px !important;'})
 });
 
 $(function () {
@@ -430,10 +421,15 @@ videojs('#my-video', options);
 //   );
 // });
 
-// $(function() {
-//   $('.rc-anchor-normal-footer').css('margin-left', '-20px !important')
-// });
-// $(function() {
-//   $(['.rc-anchor-light.rc-anchor-normal, .rc-anchor-normal']).css({'box-sizing': 'border-box !important;',
-//     'max-width': '260px !important;'})
-// });
+$(window).resize(function() {
+  var recaptcha = $(".g-recaptcha");
+  if(recaptcha.css('margin') == '1px') {
+    var newScaleFactor = recaptcha.parent().innerWidth() / 304;
+    recaptcha.css('transform', 'scale(' + newScaleFactor + ')');
+    recaptcha.css('transform-origin', '0 0');
+  }
+  else {
+    recaptcha.css('transform', 'scale(1)');
+    recaptcha.css('transform-origin', '0 0');
+  }
+});
