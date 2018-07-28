@@ -60,7 +60,7 @@ a:not([href]):not([tabindex]):hover {
   transition: background-color .1s ease;
   cursor: pointer;
   padding: 11px 15px;
-  max-width: 400px;
+  max-width: 450px;
   white-space: normal; }
   @media (max-width: 767px) {
     .btn,
@@ -1500,6 +1500,14 @@ ol {
 .btn-wrap .btn {
   width: 100%; }
 
+.reviews-btn__success,
+.contacts-btn__success {
+  border-right: 1px solid #444; }
+
+.reviews-btn__close,
+.contacts-btn__close {
+  border-left: 1px solid #444; }
+
 @media (max-width: 767px) {
   .mymodal {
     padding: 15px 30px; }
@@ -2372,3 +2380,7 @@ textarea:focus {
   .g-recaptcha {
     transform: scale(0.73);
     transform-origin: 0 0; } }
+
+@media (min-width: 768px) {
+  .g-recaptcha {
+    margin-bottom: 15px; } }

@@ -1,10 +1,10 @@
-// $(function () {
-//   $('.nav__list').removeClass('nav__list--no-js');
-//   $('.hamburger, .hamburger-close').click(function () {
-//     $('.nav__list').slideToggle('fast');
-//     $('.hamburger-close').fadeToggle(100);
-//   });
-// });
+$(function () {
+  $('.nav__list').removeClass('nav__list--no-js');
+  $('.hamburger, .hamburger-close').click(function () {
+    $('.nav__list').slideToggle('fast');
+    $('.hamburger-close').fadeToggle(100);
+  });
+});
 
 $(function () {
   $(window).scroll(function () {
@@ -210,20 +210,14 @@ $(function () {
 
 $(function () {
   $('.reviews__btn').click(function (e) {
-      e.preventDefault();
+    e.preventDefault();
     $('.reviews-modal, #modal-overlay, .reviews-btn__success').show();
-      $('.reviews-btn__success').parent().show();
-      $('.reviews-btn__close').text('Отменить');
-      $('.reviews-btn__close').attr('title', 'Отменить');
-      $('.reviews-btn__close').removeClass('.reviews-btn__ok');
-  });
-});
-
-$(function () {
-  $('.reviews-btn__ok').click(function (e) {
-      e.preventDefault();
-    $('#reviews-form input, #reviews-form textarea').val('');
-    $('.reviews-status').hide();
+    $('.reviews-btn__success').parent().show();
+    $('.reviews-btn__close').text('Отменить');
+    $('.reviews-btn__close').attr('title', 'Отменить');
+    $('.reviews-btn__close').removeClass('reviews-btn__ok');
+    $('.reviews-btn__close').parent().addClass('col-md-6');
+    $('#recaptcha1').show();
   });
 });
 
@@ -231,7 +225,8 @@ $(function () {
   $('.reviews-modal').on('click', '.reviews-btn__ok', function (e) {
     e.preventDefault();
     $('#reviews-form input, #reviews-form textarea').val('');
-    $('.reviews-status, reviews-status--success, reviews-status--error').hide();
+    $('.reviews-status').show();
+    $('.reviews-status').removeClass('reviews-status--success reviews-status--error');
   });
 });
 
@@ -255,12 +250,18 @@ $(function () {
           $('.reviews-preloader').hide();
           if (response.type == 'error') {
             $('.reviews-status').addClass('reviews-status--error');
+            $('.reviews-status').removeClass('reviews-status--success');
           } else if (response.type == 'done') {
             $('.reviews-status').addClass('reviews-status--success');
+            $('.reviews-status').removeClass('reviews-status--error');
             $('.reviews-btn__success').parent().hide();
             $('.reviews-btn__close').addClass('reviews-btn__ok');
             $('.reviews-btn__close').text('Ok');
+            $('.reviews-btn__ok').css('border-left','2px solid #444');
+            $('.reviews-btn__close').parent().removeClass('col-md-6');
             $('.reviews-btn__close').removeAttr('title');
+            grecaptcha.reset(clientId1);
+            $('#recaptcha1').hide();
           }
           $('.reviews-status').html(response.text);
         },
@@ -279,6 +280,8 @@ $(function () {
     $('.contacts-btn__close').text('Отменить');
     $('.contacts-btn__close').attr('title', 'Отменить');
     $('.contacts-btn__close').removeClass('contacts-btn__ok');
+    $('.contacts-btn__close').parent().addClass('col-md-6');
+    $('#recaptcha2').show();
   });
 });
 
@@ -286,7 +289,8 @@ $(function () {
   $('.contacts-modal').on('click', '.contacts-btn__ok', function (e) {
     e.preventDefault();
     $('#contacts-form input, #contacts-form textarea').val('');
-    $('.contacts-status, contacts-status--success, contacts-status--error').hide();
+    $('.contacts-status').hide();
+    $('.contacts-status').removeClass('contacts-status--success contacts-status--error');
   });
 });
 
@@ -305,17 +309,23 @@ $(function () {
         processData: false,
         data: formData,
         success: function (response) {
-          // $('.reviews-status').fadeIn('fast');
+          // $('.contacts-status').fadeIn('fast');
           $('.contacts-status').show();
           $('.contacts-preloader').hide();
           if (response.type == 'error') {
             $('.contacts-status').addClass('contacts-status--error');
+            $('.contacts-status').removeClass('contacts-status--success');
           } else if (response.type == 'done') {
             $('.contacts-status').addClass('contacts-status--success');
+            $('.contacts-status').removeClass('contacts-status--error');
             $('.contacts-btn__success').parent().hide();
             $('.contacts-btn__close').addClass('contacts-btn__ok');
             $('.contacts-btn__close').text('Ok');
+            $('.contacts-btn__ok').css('border-left','2px solid #444');
+            $('.contacts-btn__close').parent().removeClass('col-md-6');
             $('.contacts-btn__close').removeAttr('title');
+            grecaptcha.reset(clientId2);
+            $('#recaptcha2').hide();
           }
           $('.contacts-status').html(response.text);
         },

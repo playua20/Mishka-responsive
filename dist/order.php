@@ -46,7 +46,7 @@
             <li class="nav__item  col-12  col-md"><a href="works.html">Каталог товаров</a></li>
             <li class="nav__item  col-12  col-md"><a href="order.php">Вязание на заказ</a></li>
             <li class="nav__item  nav__item-logo  nav__item--active  col-12  col-md">
-              <a href="/">
+              <a href="/" title="На Главную">
                 <picture>
                   <source media="(min-width: 1200px)" srcset="/img/mishka-logo-des.svg">
                   <source media="(min-width: 768px)" srcset="/img/mishka-logo-tab.svg">
@@ -269,11 +269,11 @@
     </div>
   </div>
 </footer>
+
 <div id="modal-overlay"></div>
 <div class="scroll-top" title="Вверх"><span>&#8673</span></div>
 <link rel="stylesheet" href="css/libs.min.css">
 <link rel="stylesheet" href="css/style.min.css">
-<!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src="js/libs.min.js"></script>
 <script src="js/main.min.js"></script>
