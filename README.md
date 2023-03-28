@@ -1,8 +1,8 @@
 # «Mishka» (2018)
 
- * https://mishka-ua.vercel.app/ - Главная
- * https://mishka-ua.vercel.app/works.html - Каталог товаров
- * https://mishka-ua.vercel.app/order.html - Страница заказа
+ * https://mishka-three.vercel.app/ - Главная
+ * https://mishka-three.vercel.app/works.html - Каталог товаров
+ * https://mishka-three.vercel.app/order.html - Страница заказа
 
  > устаревший free домен (2017): 
  >* http://mishka.kl.com.ua/ - Главная
