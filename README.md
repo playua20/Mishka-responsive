@@ -13,6 +13,7 @@
  * Responsive
  * Mobile first
  * BEM
+ * PHP form (больше не работает - http://mishka.kl.com.ua/order.php)
  
 ## Технологии:
  * jQuery
